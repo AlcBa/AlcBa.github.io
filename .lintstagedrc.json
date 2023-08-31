@@ -1,0 +1,4 @@
+{
+  "*.{js,ts,astro}": ["eslint --ext .js,.ts,.astro src --fix"],
+  "**/*": ["prettier --ignore-unknown --write"]
+}
