@@ -1,13 +1,26 @@
-# Astro with Tailwind
+# Alcba
 
-```
-npm create astro@latest -- --template with-tailwindcss
-```
+## Updating Content
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
+### Home Page
 
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
+Some information on the home page can be updated using the JSON file found in `src/content/home/home.json`.
 
-For complete setup instructions, please see our [Tailwind Integration Guide](https://docs.astro.build/en/guides/integrations-guide/tailwind).
+| Key         | Value                                                                           |
+| ----------- | ------------------------------------------------------------------------------- |
+| title       | The title of the page                                                           |
+| description | The description on the page                                                     |
+| imageUrl    | The file path to the profile image, image should be placed in the public folder |
+
+### Social Links
+
+The social links can be updated using the JSON file found in `src/content/social/social.json`.
+
+| Key           | Value                                                                          |
+| ------------- | ------------------------------------------------------------------------------ |
+| googleScholar | A URL to the Google Scholar page, must begin with `https://scholar.google.com` |
+| email         | An email                                                                       |
+| twitter       | A URL to the Twitter page, must begin with `https://twitter.com`               |
+| github        | A URL to the GitHub page, must begin with `https://github.com`                 |
+
+## Developer Guide
