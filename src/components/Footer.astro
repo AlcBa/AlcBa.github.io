@@ -1,0 +1,14 @@
+---
+import SocialLinks from './SocialLinks.astro';
+import { SITE_NAME } from '../consts';
+const currentPath = Astro.url.pathname;
+---
+
+<footer class="bg-white">
+  <div
+    class=`container px-6 mx-auto max-w-4xl flex ${currentPath === "/" ? "justify-center" : "justify-between" } items-center`
+  >
+    <p class="py-3 text-sm">&copy; 2023 {SITE_NAME}</p>
+    {currentPath !== '/' && <SocialLinks />}
+  </div>
+</footer>

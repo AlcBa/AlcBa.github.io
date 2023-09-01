@@ -23,6 +23,15 @@ The list of publications and working papers can be updated using the JSON files 
 | authors           | The authors of the paper                                                                                             |
 | pdfUrl (optional) | The link to the PDF file, must end with a `.pdf` file extension. The PDF file should be located in `public/research` |
 
+### Teaching page
+
+The information on the teaching page can be updated using the JSON file found in `src/content/teaching/teaching.json`. The format is as follows:
+
+| Key        | Value                                            |
+| ---------- | ------------------------------------------------ |
+| philosophy | The description of teaching philosophy           |
+| courses    | A title and optional description for each course |
+
 ### Social Links
 
 The social links can be updated using the JSON file found in `src/content/social/social.json`.

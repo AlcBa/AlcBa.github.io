@@ -1,9 +1,9 @@
 ---
-import SocialLinks from '../components/SocialLinks.astro';
 import '../components/GlobalStyles.astro';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_NAME } from '../consts';
 const { title } = Astro.props;
-const currentPath = Astro.url.pathname;
 ---
 
 <html lang="en">
@@ -11,25 +11,18 @@ const currentPath = Astro.url.pathname;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} | Yuhao Ba</title>
+    <title>{title} | {SITE_NAME}</title>
   </head>
   <body class="bg-gray-500 text-gray-100">
     <header class="bg-gray-100 text-gray-500">
       <h1 class="text-center py-6">
-        <a href="/">Yuhao Ba</a>
+        <a href="/">{SITE_NAME}</a>
       </h1>
       <Navbar />
     </header>
     <main class="container max-w-4xl min-h-[calc(100vh-170px)] mx-auto px-6">
       <slot />
     </main>
-    <footer class="bg-white">
-      <div
-        class=`container px-6 mx-auto max-w-4xl flex ${currentPath === "/" ? "justify-center" : "justify-between" } items-center`
-      >
-        <p class="py-3 text-sm">&copy; 2023 Yuhao Ba</p>
-        {currentPath !== '/' && <SocialLinks />}
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>
