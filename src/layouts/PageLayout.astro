@@ -37,9 +37,9 @@ const currentPath = Astro.url.pathname;
     <main class="container max-w-4xl mx-auto px-6">
       <slot />
     </main>
-    <footer class="bg-white px-6">
+    <footer class="bg-white">
       <div
-        class=`container mx-auto max-w-4xl flex ${currentPath === "/" ? "justify-center" : "justify-between" } items-center`
+        class=`container px-6 mx-auto max-w-4xl flex ${currentPath === "/" ? "justify-center" : "justify-between" } items-center`
       >
         <p class="py-3 text-sm">&copy; 2023 Yuhao Ba</p>
         {currentPath !== '/' && <SocialLinks />}

@@ -1,7 +1,35 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+
+import { getEntry } from 'astro:content';
+
+const { data: publications } = await getEntry('research', 'publications');
+const { data: workingpapers } = await getEntry('research', 'workingpapers');
 ---
 
+<style>
+  h2 {
+    @apply font-bold text-xl mb-4;
+  }
+</style>
+
 <PageLayout title="Research">
-  <div class="grid place-items-center h-screen content-center">This is the research page.</div>
+  <div class="space-y-3">
+    <h2 class="mt-8">Publications</h2>
+    {
+      publications.map((p) => (
+        <ResearchCard title={p.title} publication={p.publication} authors={p.authors} pdfUrl={p.pdfUrl} />
+      ))
+    }
+  </div>
+
+  <div class="space-y-3 mb-8">
+    {workingpapers.length !== 0 && <h2 class="mt-12">Working Papers</h2>}
+    {
+      workingpapers.map((p) => (
+        <ResearchCard title={p.title} publication={p.publication} authors={p.authors} pdfUrl={p.pdfUrl} />
+      ))
+    }
+  </div>
 </PageLayout>
