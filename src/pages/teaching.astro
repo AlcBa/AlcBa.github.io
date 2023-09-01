@@ -1,7 +1,24 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+
+import { getEntry } from 'astro:content';
+import CourseCard from '../components/CourseCard.astro';
+
+const { data } = await getEntry('teaching', 'teaching');
+const { philosophy, courses } = data;
 ---
 
+<style>
+  h2 {
+    @apply font-bold text-xl mb-4;
+  }
+</style>
+
 <PageLayout title="Teaching">
-  <div class="grid place-items-center h-screen content-center">This is the teaching page.</div>
+  <h2 class="pt-8">Teaching Philosophy</h2>
+  <p>{philosophy}</p>
+  <h2 class="mt-12">Courses</h2>
+  <div class="space-y-3 mb-8">
+    {courses.map((c) => <CourseCard title={c.title} description={c.description} />)}
+  </div>
 </PageLayout>

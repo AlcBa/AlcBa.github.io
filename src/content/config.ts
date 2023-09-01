@@ -43,8 +43,22 @@ const researchCollection = defineCollection({
   schema: z.array(researchSchema),
 });
 
+const courseSchema = z.object({
+  title: z.string(),
+  description: z.string().optional(),
+});
+
+const teachingCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    philosophy: z.string(),
+    courses: z.array(courseSchema),
+  }),
+});
+
 export const collections = {
   home: homeCollection,
   social: socialCollection,
   research: researchCollection,
+  teaching: teachingCollection,
 };

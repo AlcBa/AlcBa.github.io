@@ -1,0 +1,12 @@
+{
+  "philosophy": "Hello",
+  "courses": [
+    {
+      "title": "Course title 1",
+      "description": "Course description"
+    },
+    {
+      "title": "Course title 2"
+    }
+  ]
+}

@@ -25,7 +25,7 @@ const currentPath = Astro.url.pathname;
       <h1 class="text-center text-3xl font-bold py-6">
         <a href="/"> Yuhao Ba</a>
       </h1>
-      <nav class="flex mx-auto max-w-4xl justify-start overflow-x-scroll px-6">
+      <nav class="flex mx-auto max-w-4xl justify-start overflow-x-scroll">
         <a class={currentPath === '/' ? 'active' : ''} href="/">Home</a>
         <a class={currentPath === '/research/' ? 'active' : ''} href="/research/">Research</a>
         <a class={currentPath === '/teaching/' ? 'active' : ''} href="/teaching/">Teaching</a>
@@ -34,7 +34,7 @@ const currentPath = Astro.url.pathname;
         <a class={currentPath === '/cv/' ? 'active' : ''} href="/cv/">CV</a>
       </nav>
     </header>
-    <main class="container max-w-4xl mx-auto px-6">
+    <main class="container max-w-4xl min-h-[calc(100vh-170px)] mx-auto px-6">
       <slot />
     </main>
     <footer class="bg-white">

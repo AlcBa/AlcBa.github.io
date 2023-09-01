@@ -16,7 +16,7 @@ const { data: workingpapers } = await getEntry('research', 'workingpapers');
 
 <PageLayout title="Research">
   <div class="space-y-3">
-    <h2 class="mt-8">Publications</h2>
+    <h2 class="pt-8">Publications</h2>
     {
       publications.map((p) => (
         <ResearchCard title={p.title} publication={p.publication} authors={p.authors} pdfUrl={p.pdfUrl} />
