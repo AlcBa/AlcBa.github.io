@@ -1,5 +1,7 @@
 ---
 import SocialLinks from '../components/SocialLinks.astro';
+import '../components/GlobalStyles.astro';
+import Navbar from '../components/Navbar.astro';
 const { title } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
@@ -11,28 +13,12 @@ const currentPath = Astro.url.pathname;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Yuhao Ba</title>
   </head>
-  <style>
-    nav > a {
-      @apply py-2 px-6 flex-1 text-center inline-block;
-    }
-
-    nav > a.active {
-      @apply border-b-2 border-b-blue-400 text-blue-400;
-    }
-  </style>
   <body class="bg-gray-500 text-gray-100">
     <header class="bg-gray-100 text-gray-500">
-      <h1 class="text-center text-3xl font-bold py-6">
-        <a href="/"> Yuhao Ba</a>
+      <h1 class="text-center py-6">
+        <a href="/">Yuhao Ba</a>
       </h1>
-      <nav class="flex mx-auto max-w-4xl justify-start overflow-x-scroll">
-        <a class={currentPath === '/' ? 'active' : ''} href="/">Home</a>
-        <a class={currentPath === '/research/' ? 'active' : ''} href="/research/">Research</a>
-        <a class={currentPath === '/teaching/' ? 'active' : ''} href="/teaching/">Teaching</a>
-        <a class={currentPath === '/data/' ? 'active' : ''} href="/data/">Data</a>
-        <a class={currentPath === '/team/' ? 'active' : ''} href="/team/">Team</a>
-        <a class={currentPath === '/cv/' ? 'active' : ''} href="/cv/">CV</a>
-      </nav>
+      <Navbar />
     </header>
     <main class="container max-w-4xl min-h-[calc(100vh-170px)] mx-auto px-6">
       <slot />

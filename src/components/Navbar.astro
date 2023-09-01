@@ -1,0 +1,22 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<style>
+  nav > a {
+    @apply py-2 px-6 flex-1 text-center inline-block;
+  }
+
+  nav > a.active {
+    @apply border-b-2 border-b-blue-400 text-blue-400;
+  }
+</style>
+
+<nav class="flex mx-auto max-w-4xl justify-start overflow-x-scroll">
+  <a class={currentPath === '/' ? 'active' : ''} href="/">Home</a>
+  <a class={currentPath === '/research/' ? 'active' : ''} href="/research/">Research</a>
+  <a class={currentPath === '/teaching/' ? 'active' : ''} href="/teaching/">Teaching</a>
+  <a class={currentPath === '/data/' ? 'active' : ''} href="/data/">Data</a>
+  <a class={currentPath === '/team/' ? 'active' : ''} href="/team/">Team</a>
+  <a class={currentPath === '/cv/' ? 'active' : ''} href="/cv/">CV</a>
+</nav>
