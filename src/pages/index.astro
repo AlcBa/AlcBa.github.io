@@ -1,24 +1,37 @@
 ---
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="generator" content={Astro.generator} />
-	<title>Astro + TailwindCSS</title>
-</head>
+<style>
+  h2 {
+    @apply font-bold text-xl;
+  }
 
-<body>
-<div class="grid place-items-center h-screen content-center">
-	<Button>Tailwind Button in Astro!</Button>
-	<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-</div>
-</body>
-</html>
+  a {
+    @apply text-blue-300 hover:text-blue-400;
+  }
+</style>
+<PageLayout title="Home">
+  <div class="grid place-items-center min-h-[500px] h-[calc(100vh-170px)] content-center">
+    <div class="flex flex-col space-y-6 sm:flex-row sm:space-x-12 sm:space-y-0">
+      <div class="shrink-0 w-64 mx-auto">
+        <img class="rounded-full h-64 aspect-square object-cover" src="/yuhao-ba.jpg" alt="Yuhao Ba" />
+        <p class="text-sm text-center mt-3">
+          Assistant Professor at
+          <a href="https://lkyspp.nus.edu.sg/our-people/faculty/ba-yuhao" rel="noreferrer noopener" target="_blank">
+            Lee Kuan Yew School of Public Policy
+          </a>
+        </p>
+        <p class="text-sm text-center">National University of Singapore</p>
+      </div>
+      <div class="m-0">
+        <h2>Welcome to my website</h2>
+        <p class="mt-3">
+          Lorem ipsum dolor sit amet consectetur. Eu dis aliquam enim quis metus nunc penatibus volutpat. Vitae nunc
+          semper feugiat amet. Sed mollis tortor sed maecenas in semper diam. Leo lectus bibendum dictum at tempus risus
+          quam lacus.
+        </p>
+      </div>
+    </div>
+  </div>
+</PageLayout>
