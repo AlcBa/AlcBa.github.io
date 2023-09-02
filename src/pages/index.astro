@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
 import { getEntry } from 'astro:content';
 import SocialLinks from '../components/SocialLinks.astro';
 const { data } = await getEntry('home', 'home');
@@ -14,7 +15,13 @@ const { data } = await getEntry('home', 'home');
   <div class="grid place-items-center min-h-[500px] h-[calc(100vh-170px)] content-center">
     <div class="flex flex-col space-y-6 sm:flex-row sm:space-x-12 sm:space-y-0">
       <div class="shrink-0 w-64 mx-auto">
-        <img class="rounded-full h-64 aspect-square object-cover" src=`/${data.imageUrl}` alt="Yuhao Ba" />
+        <Image
+          height="256px"
+          width="256px"
+          src={`/${data.imageUrl}`}
+          alt="Yuhao Ba"
+          class="rounded-full h-64 aspect-square object-cover"
+        />
         <p class="text-sm text-center mt-3">
           Assistant Professor at
           <a href="https://lkyspp.nus.edu.sg/our-people/faculty/ba-yuhao" rel="noreferrer noopener" target="_blank">
