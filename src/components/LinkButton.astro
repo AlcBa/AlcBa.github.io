@@ -2,9 +2,10 @@
 interface Props {
   label: string;
   link: string;
+  opensNewTab?: boolean;
 }
 
-const { label, link } = Astro.props;
+const { label, link, opensNewTab = false } = Astro.props;
 ---
 
 <style>
@@ -13,6 +14,6 @@ const { label, link } = Astro.props;
   }
 </style>
 
-<a href={link}>
+<a href={link} target={opensNewTab ? '_blank' : '_self'} rel={opensNewTab ? 'noreferrer noopener' : ''}>
   {label}
 </a>
