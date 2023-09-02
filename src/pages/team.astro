@@ -10,8 +10,16 @@ const { data: alumni } = await getEntry('team', 'alumni');
 
 <PageLayout title="Team">
   <h2 class="pt-8 mb-4">Team</h2>
-  {team.map((t) => <TeamCard name={t.name} role={t.role} description={t.description} website={t.website} />)}
+  {
+    team.map((t) => (
+      <TeamCard name={t.name} role={t.role} description={t.description} website={t.website} imageUrl={t.imageUrl} />
+    ))
+  }
   <h2 class="mt-12 mb-4">Alumni</h2>
   {alumni.length === 0 && <p>No alumni found.</p>}
-  {alumni.map((t) => <TeamCard name={t.name} role={t.role} description={t.description} website={t.website} />)}
+  {
+    alumni.map((t) => (
+      <TeamCard name={t.name} role={t.role} description={t.description} website={t.website} imageUrl={t.imageUrl} />
+    ))
+  }
 </PageLayout>

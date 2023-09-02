@@ -59,7 +59,7 @@ const teachingCollection = defineCollection({
 const teamSchema = z.object({
   name: z.string(),
   role: z.string(),
-  description: z.string(),
+  description: z.string().optional(),
   website: z.string().url().optional(),
   imageUrl: z.string(),
 });

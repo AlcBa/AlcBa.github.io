@@ -6,11 +6,11 @@
 
 Some information on the home page can be updated using the JSON file found in `src/content/home/home.json`. The format is as follows:
 
-| Key         | Value                                                                           |
-| ----------- | ------------------------------------------------------------------------------- |
-| title       | The title of the page                                                           |
-| description | The description on the page                                                     |
-| imageUrl    | The file path to the profile image, image should be placed in the public folder |
+| Key         | Value                                                                             |
+| ----------- | --------------------------------------------------------------------------------- |
+| title       | The title of the page                                                             |
+| description | The description on the page                                                       |
+| imageUrl    | The file path to the profile image, image should be placed in the `public` folder |
 
 ### Research Page
 
@@ -31,6 +31,18 @@ The information on the teaching page can be updated using the JSON file found in
 | ---------- | ------------------------------------------------ |
 | philosophy | The description of teaching philosophy           |
 | courses    | A title and optional description for each course |
+
+### Team page
+
+The list of teams members and alumni on the teams page can be updated using the JSON files found in `src/content/team/team.json` and `src/content/team/alumni.json` respectively. The format is as follows:
+
+| Key                    | Value                                                                                             |
+| ---------------------- | ------------------------------------------------------------------------------------------------- |
+| name                   | The name of team member                                                                           |
+| role                   | The role of the team member                                                                       |
+| description (optional) | A short description of the team member                                                            |
+| website (optional)     | The website of the team member                                                                    |
+| imageUrl               | The file path to the profile image for the team member, should be placed in `public/team` folder. |
 
 ### Social Links
 
