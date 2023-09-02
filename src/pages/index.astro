@@ -12,7 +12,7 @@ const { data } = await getEntry('home', 'home');
   }
 </style>
 <PageLayout title="Home">
-  <div class="grid place-items-center min-h-[500px] h-[calc(100vh-170px)] content-center">
+  <div class="grid place-items-center min-h-[700px] sm:min-h-[500px] h-[calc(100vh-170px)] content-center">
     <div class="flex flex-col space-y-6 sm:flex-row sm:space-x-12 sm:space-y-0">
       <div class="shrink-0 w-64 mx-auto">
         <Image
@@ -31,7 +31,7 @@ const { data } = await getEntry('home', 'home');
         <p class="text-sm text-center mb-5">National University of Singapore</p>
         <SocialLinks />
       </div>
-      <div class="m-0">
+      <div>
         <h2>{data.title}</h2>
         <p class="mt-3">
           {data.description}
