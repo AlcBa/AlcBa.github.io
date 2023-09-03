@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
@@ -16,7 +18,11 @@ module.exports = {
       'blue-400': '#8399d8',
       'blue-500': '#d0d9f0',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Open Sans Variable', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   plugins: [],
 };
