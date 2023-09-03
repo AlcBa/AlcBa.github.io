@@ -8,7 +8,7 @@ const { data } = await getEntry('data', 'data');
 ---
 
 <PageLayout title="Data">
-  <div class="space-y-3 pt-8 mb-8">
+  <div class="space-y-3 mb-8">
     {data.map((d) => <DataCard title={d.title} description={d.description} />)}
   </div>
 </PageLayout>

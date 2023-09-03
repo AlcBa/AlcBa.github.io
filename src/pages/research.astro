@@ -10,7 +10,7 @@ const { data: workingpapers } = await getEntry('research', 'workingpapers');
 
 <PageLayout title="Research">
   <div class="space-y-3">
-    <h2 class="pt-8 mb-4">Publications</h2>
+    <h2 class="mb-4">Publications</h2>
     {publications.length === 0 && <p>No publications currently.</p>}
     {
       publications.map((p) => (
