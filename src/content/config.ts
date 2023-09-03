@@ -56,6 +56,16 @@ const teachingCollection = defineCollection({
   }),
 });
 
+const dataSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
+const dataCollection = defineCollection({
+  type: 'data',
+  schema: z.array(dataSchema),
+});
+
 const teamSchema = z.object({
   name: z.string(),
   role: z.string(),
@@ -74,5 +84,6 @@ export const collections = {
   social: socialCollection,
   research: researchCollection,
   teaching: teachingCollection,
+  data: dataCollection,
   team: teamCollection,
 };
