@@ -12,7 +12,7 @@ const { philosophy, courses } = data;
   <h2 class="mb-4">Teaching Philosophy</h2>
   <p>{philosophy}</p>
   <h2 class="mt-12 mb-4">Courses</h2>
-  <div class="space-y-3 mb-8">
+  <div class="space-y-3">
     {courses.map((c) => <CourseCard title={c.title} description={c.description} />)}
   </div>
 </PageLayout>

@@ -1,5 +1,4 @@
 ---
-import LinkButton from './LinkButton.astro';
 interface Props {
   title: string;
   publication: string;
@@ -16,7 +15,13 @@ const { title, publication, authors, pdfUrl } = Astro.props;
       <p class="text-gray-300 italic text-sm">{publication}</p>
       <h3>{title}</h3>
     </div>
-    {pdfUrl && <LinkButton label="PDF" link={`/research/${pdfUrl}`} />}
+    {
+      pdfUrl && (
+        <a class="btn text-xs" href={`/research/${pdfUrl}`}>
+          PDF
+        </a>
+      )
+    }
   </div>
   <p>
     {authors}

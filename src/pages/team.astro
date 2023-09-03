@@ -19,7 +19,7 @@ const { data: alumni } = await getEntry('team', 'alumni');
     }
   </div>
   <h2 class="mt-12 mb-4">Alumni</h2>
-  <div class="mb-8 space-y-6">
+  <div class="space-y-6">
     {alumni.length === 0 && <p>No alumni found.</p>}
     {
       alumni.map((t) => (
