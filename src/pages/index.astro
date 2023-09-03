@@ -6,11 +6,6 @@ import SocialLinks from '../components/SocialLinks.astro';
 const { data } = await getEntry('home', 'home');
 ---
 
-<style>
-  a {
-    @apply text-blue-300 hover:text-blue-400;
-  }
-</style>
 <PageLayout title="Home">
   <div class="grid place-items-center min-h-[700px] sm:min-h-[500px] h-[calc(100vh-170px)] content-center">
     <div class="flex flex-col space-y-6 sm:flex-row sm:space-x-12 sm:space-y-0">
@@ -24,7 +19,12 @@ const { data } = await getEntry('home', 'home');
         />
         <p class="text-sm text-center mt-3">
           Assistant Professor at
-          <a href="https://lkyspp.nus.edu.sg/our-people/faculty/ba-yuhao" rel="noreferrer noopener" target="_blank">
+          <a
+            class="link"
+            href="https://lkyspp.nus.edu.sg/our-people/faculty/ba-yuhao"
+            rel="noreferrer noopener"
+            target="_blank"
+          >
             Lee Kuan Yew School of Public Policy
           </a>
         </p>

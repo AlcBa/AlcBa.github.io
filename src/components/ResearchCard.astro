@@ -10,11 +10,11 @@ interface Props {
 const { title, publication, authors, pdfUrl } = Astro.props;
 ---
 
-<div class="p-4 bg-white rounded-md border border-gray-400">
+<div class="card">
   <div class="w-full flex justify-between items-start mb-2">
     <div>
       <p class="text-gray-300 italic text-sm">{publication}</p>
-      <h3 class="font-bold">{title}</h3>
+      <h3>{title}</h3>
     </div>
     {pdfUrl && <LinkButton label="PDF" link={`/research/${pdfUrl}`} />}
   </div>

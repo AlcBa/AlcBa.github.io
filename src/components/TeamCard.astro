@@ -22,9 +22,9 @@ const { name, role, description, website, imageUrl } = Astro.props;
     class="h-40 w-40 min-w-40 aspect-square rounded-full"
   />
   <div>
-    <h3 class="font-bold">{name}</h3>
+    <h3>{name}</h3>
     <p class="text-sm text-gray-300">{role}</p>
-    {description && <p class="my-4">{description}</p>}
+    <p class="my-4">{description}</p>
     {website && <LinkButton label="Website" link={website} opensNewTab={true} />}
   </div>
 </div>
