@@ -3,10 +3,14 @@ import PageLayout from '../layouts/PageLayout.astro';
 ---
 
 <PageLayout title="CV">
-  <object class="w-full h-[600px] mb-8" data="/cv/cv.pdf">
-    <p>Unable to display the PDF file.</p>
-  </object>
+  <div class="mb-8">
+    <iframe
+      class="h-[700px] w-full"
+      src={`https://drive.google.com/viewerng/
+viewer?embedded=true&url=https://alcba.lesterong.com/cv/cv.pdf`}
+      allow="autoplay"></iframe>
+  </div>
   <div class="w-full text-center">
-    <a class="btn text-sm" href="/cv/cv.pdf" download> Download CV</a>
+    <a class="btn text-sm" href="/cv/cv.pdf" download>Download CV</a>
   </div>
 </PageLayout>
