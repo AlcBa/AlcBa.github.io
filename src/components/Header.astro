@@ -32,7 +32,7 @@ import Navbar from './Navbar.astro';
     }
 
     headerImages[i].classList.add('transition-opacity');
-    headerImages[i].classList.add('duration-200');
+    headerImages[i].classList.add('duration-500');
 
     i++;
     if (i === headerImages.length) {
@@ -40,18 +40,18 @@ import Navbar from './Navbar.astro';
     }
 
     headerImages[i].classList.add('transition-opacity');
-    headerImages[i].classList.add('duration-200');
+    headerImages[i].classList.add('duration-500');
 
-    setTimeout(nextImage, 4000);
+    setTimeout(nextImage, 6000);
   }
   nextImage();
 </script>
 
-<header class="bg-[#000000] text-gray-500 h-[158px] mb-8">
+<header class="bg-[#000000] text-gray-500 h-[210px] mb-8">
   <img src={'/header1.jpg'} alt="header1" class="header-image" />
   <img src={'/header2.jpg'} alt="header2" class="header-image" />
   <div class="absolute w-full top-0">
-    <h1 class="text-center py-10">
+    <h1 class="text-center py-16">
       <a href="/">{SITE_NAME}</a>
     </h1>
     <Navbar />
