@@ -30,7 +30,7 @@ const socialCollection = defineCollection({
 
 const researchSchema = z.object({
   title: z.string(),
-  publication: z.string(),
+  publication: z.string().optional(),
   authors: z.string(),
   pdfUrl: z
     .string()
