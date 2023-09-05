@@ -31,9 +31,6 @@ import Navbar from './Navbar.astro';
       headerImages[i - 1].classList.remove('active');
     }
 
-    headerImages[i].classList.add('transition-opacity');
-    headerImages[i].classList.add('duration-500');
-
     i++;
     if (i === headerImages.length) {
       i = 0;
