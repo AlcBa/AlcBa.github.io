@@ -3,8 +3,53 @@ import { SITE_NAME } from '../consts';
 import Navbar from './Navbar.astro';
 ---
 
+<style>
+  .header-image {
+    @apply w-full object-cover h-0 object-center opacity-0;
+  }
+
+  .header-image.active {
+    @apply opacity-40 h-full;
+  }
+</style>
+<script>
+  let i = Number(localStorage['header']) || 0;
+  const headerImages = document.getElementsByClassName('header-image');
+
+  function nextImage() {
+    localStorage['header'] = i;
+    headerImages[i].classList.add('active');
+    if (headerImages.length === 1) {
+      // Only one header image, no need to fade
+      return;
+    }
+
+    if (i === 0) {
+      // First image, make sure last image is hidden
+      headerImages[headerImages.length - 1].classList.remove('active');
+    } else {
+      headerImages[i - 1].classList.remove('active');
+    }
+
+    headerImages[i].classList.add('transition-opacity');
+    headerImages[i].classList.add('duration-200');
+
+    i++;
+    if (i === headerImages.length) {
+      i = 0;
+    }
+
+    headerImages[i].classList.add('transition-opacity');
+    headerImages[i].classList.add('duration-200');
+
+    setTimeout(nextImage, 4000);
+  }
+  nextImage();
+</script>
+
 <header class="bg-[#000000] text-gray-500 h-[158px] mb-8">
-  <img src={'/header1.jpg'} alt="header2" class="w-full h-full object-cover object-center opacity-40" />
+  <img src={'/header1.jpg'} alt="header1" class="header-image" />
+  <img src={'/header2.jpg'} alt="header2" class="header-image" />
   <div class="absolute w-full top-0">
     <h1 class="text-center py-10">
       <a href="/">{SITE_NAME}</a>
