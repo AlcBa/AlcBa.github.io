@@ -56,3 +56,19 @@ The social links can be updated using the JSON file found in `src/content/social
 | github        | A URL to the GitHub page, must begin with `https://github.com`                 |
 
 ## Developer Guide
+
+### Getting Started
+
+This project is built with Astro + TailwindCSS.
+
+1. Clone this repository
+2. Install dependencies `yarn install`
+3. Run `yarn dev` to serve the application
+
+### Deploying the Application
+
+See [Astro documentation](https://docs.astro.build/en/guides/deploy) for deployment instructions.
+
+### Other Notes
+
+ESLint and Prettier are set up in this project to lint and format code. This project also uses pre-commit hooks to run ESLint and Prettier on every commit.
