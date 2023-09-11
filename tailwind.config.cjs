@@ -19,6 +19,9 @@ module.exports = {
       'blue-500': '#d0d9f0',
     },
     extend: {
+      screens: {
+        xs: '475px',
+      },
       fontFamily: {
         sans: ['Open Sans Variable', ...defaultTheme.fontFamily.sans],
       },
