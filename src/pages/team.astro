@@ -8,23 +8,46 @@ const { data: team } = await getEntry('team', 'team');
 const { data: alumni } = await getEntry('team', 'alumni');
 ---
 
+<style>
+  .team-container {
+    @apply grid grid-cols-2 gap-y-6 gap-x-2;
+  }
+</style>
+
 <PageLayout title="Team">
-  <h2 class="mb-4">Team</h2>
-  <div class="space-y-6">
+  <div class="team-container">
     {team.length === 0 && <p>No team found.</p>}
     {
-      team.map((t) => (
-        <TeamCard name={t.name} role={t.role} description={t.description} website={t.website} imageUrl={t.imageUrl} />
-      ))
+      team
+        .sort((a, b) => (a.firstName < b.firstName ? -1 : 1))
+        .map((t) => (
+          <TeamCard
+            firstName={t.firstName}
+            lastName={t.lastName}
+            role={t.role}
+            description={t.description}
+            website={t.website}
+            imageUrl={t.imageUrl}
+          />
+        ))
     }
   </div>
   <h2 class="mt-12 mb-4">Alumni</h2>
-  <div class="space-y-6">
+  <div class="team-container">
     {alumni.length === 0 && <p>No alumni found.</p>}
     {
-      alumni.map((t) => (
-        <TeamCard name={t.name} role={t.role} description={t.description} website={t.website} imageUrl={t.imageUrl} />
-      ))
+      alumni
+        .sort((a, b) => (a.firstName < b.firstName ? -1 : 1))
+        .map((t) => (
+          <TeamCard
+            firstName={t.firstName}
+            lastName={t.lastName}
+            role={t.role}
+            description={t.description}
+            website={t.website}
+            imageUrl={t.imageUrl}
+          />
+        ))
     }
   </div>
 </PageLayout>

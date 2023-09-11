@@ -1,23 +1,26 @@
 [
   {
-    "name": "John Doe",
+    "firstName": "Zi Jie",
+    "lastName": "Lee",
     "role": "Research Assistant",
-    "description": "Lorem ipsum dolor sit amet consectetur.",
-    "website": "https://www.google.com",
-    "imageUrl": "yuhao-ba.jpg"
+    "description": "NUS Data Science & Analytics",
+    "website": "https://www.linkedin.com/in/lee-zi-jie-41b659198/",
+    "imageUrl": "lee-zi-jie.jpg"
   },
   {
-    "name": "John Doe",
+    "firstName": "Fionna",
+    "lastName": "Hudison",
     "role": "Research Assistant",
-    "description": "Lorem ipsum dolor sit amet consectetur.",
-    "website": "https://www.google.com",
-    "imageUrl": "yuhao-ba.jpg"
+    "description": "NUS Environmental Studies",
+    "website": "https://www.linkedin.com/in/fionnahudison/",
+    "imageUrl": "fionna-hudison.jpg"
   },
   {
-    "name": "John Doe",
+    "firstName": "Sze Koy",
+    "lastName": "Ho",
     "role": "Research Assistant",
-    "description": "Lorem ipsum dolor sit amet consectetur.",
-    "website": "https://www.google.com",
-    "imageUrl": "yuhao-ba.jpg"
+    "description": "Yale-NUS Environmental Sciences",
+    "website": "https://sg.linkedin.com/in/sze-koy-ho-b45633232",
+    "imageUrl": "ho-sze-koy.jpg"
   }
 ]

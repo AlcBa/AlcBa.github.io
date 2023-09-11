@@ -67,9 +67,10 @@ const dataCollection = defineCollection({
 });
 
 const teamSchema = z.object({
-  name: z.string(),
+  firstName: z.string(),
+  lastName: z.string().optional(),
   role: z.string(),
-  description: z.string().optional(),
+  description: z.string(),
   website: z.string().url().optional(),
   imageUrl: z.string(),
 });
