@@ -19,7 +19,7 @@ const { data: alumni } = await getEntry('team', 'alumni');
     {team.length === 0 && <p>No team found.</p>}
     {
       team
-        .sort((a, b) => (a.firstName < b.firstName ? -1 : 1))
+        .sort((a, b) => (a.firstName.toLowerCase() < b.firstName.toLowerCase() ? -1 : 1))
         .map((t) => (
           <TeamCard
             firstName={t.firstName}
@@ -37,7 +37,7 @@ const { data: alumni } = await getEntry('team', 'alumni');
     {alumni.length === 0 && <p>No alumni found.</p>}
     {
       alumni
-        .sort((a, b) => (a.firstName < b.firstName ? -1 : 1))
+        .sort((a, b) => (a.firstName.toLowerCase() < b.firstName.toLowerCase() ? -1 : 1))
         .map((t) => (
           <TeamCard
             firstName={t.firstName}
