@@ -5,7 +5,9 @@ const homeCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    imageUrl: z.string(),
+    imageUrl: z
+      .string()
+      .refine((val) => val.endsWith('.jpg') || val.endsWith('.jpeg') || val.endsWith('.png') || val.endsWith('.webp')),
   }),
 });
 
@@ -72,7 +74,9 @@ const teamSchema = z.object({
   role: z.string(),
   description: z.string(),
   website: z.string().url().optional(),
-  imageUrl: z.string(),
+  imageUrl: z
+    .string()
+    .refine((val) => val.endsWith('.jpg') || val.endsWith('.jpeg') || val.endsWith('.png') || val.endsWith('.webp')),
 });
 
 const teamCollection = defineCollection({
