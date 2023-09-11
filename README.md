@@ -2,15 +2,17 @@
 
 ## Updating Content
 
+The data for each page is stored within the `src/content` folder as JSON files. Other files such as images and PDF documents are stored within the `public` folder.
+
 ### Home Page
 
 Some information on the home page can be updated using the JSON file found in `src/content/home/home.json`. The format is as follows:
 
-| Key         | Value                                                                             |
-| ----------- | --------------------------------------------------------------------------------- |
-| title       | The title of the page                                                             |
-| description | The description on the page                                                       |
-| imageUrl    | The file path to the profile image, image should be placed in the `public` folder |
+| Key         | Value                                                                                              |
+| ----------- | -------------------------------------------------------------------------------------------------- |
+| title       | The title of the page                                                                              |
+| description | The description on the page                                                                        |
+| imageUrl    | The file name of the profile image<br/> <ul><li>Image should be placed in the `public` folder</li> |
 
 ### Research Page
 
