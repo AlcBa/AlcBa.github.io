@@ -26,7 +26,14 @@ const name = `${firstName} ${lastName ? lastName.toUpperCase() : ''}`.trim();
 <div
   class="flex flex-row space-y-0 space-x-4 xs:flex-col xs:space-x-0 xs:space-y-2 md:flex-row md:space-y-0 md:space-x-4"
 >
-  <img alt={name} src={`/team/${imageUrl}`} />
+  <div>
+    <img
+      class="bg-gray-400 animate-pulse"
+      alt={name}
+      src={`/team/${imageUrl}`}
+      onload='this.classList.remove("animate-pulse")'
+    />
+  </div>
   <div>
     <h3>{name}</h3>
     <p class="text-sm text-gray-300">{role}</p>
