@@ -18,10 +18,10 @@ const images = await Astro.glob('/src/content/header/*').then((files) => {
   }
 </style>
 <script>
+  let i = Number(sessionStorage['header']) || 0;
   const headerImages = document.getElementsByClassName('header-image');
-  let i = Number(localStorage['header']) || 0;
   function nextImage() {
-    localStorage['header'] = i;
+    sessionStorage['header'] = i;
     headerImages[i].classList.add('active');
     if (headerImages.length === 1) {
       // Only one header image, no need to fade
