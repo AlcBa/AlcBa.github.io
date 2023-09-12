@@ -25,6 +25,9 @@ module.exports = {
       fontFamily: {
         sans: ['Open Sans Variable', ...defaultTheme.fontFamily.sans],
       },
+      animation: {
+        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;',
+      },
     },
   },
   plugins: [],
