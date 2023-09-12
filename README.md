@@ -2,7 +2,9 @@
 
 ## Updating Content
 
-The data for each page is stored within the `src/content` folder as JSON files. Other files such as images and PDF documents are stored within the `public` folder.
+The data and images for each page is stored within the `src/content` folder. Other files such PDF documents are stored within the `public` folder, so that they're publicly accessible.
+
+**Note**: Header images are stored in the `public` folder to prevent Astro from optimising these images! Astro's image optimisation conflicts with the transitions between the images.
 
 ### Home Page
 
@@ -10,11 +12,13 @@ Some information on the home page can be updated using the JSON file found in `s
 
 The format is as follows:
 
-| Key         | Value                                                                                                                                                                                                                                                                                                   |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| title       | The title of the page                                                                                                                                                                                                                                                                                   |
-| description | The description on the page                                                                                                                                                                                                                                                                             |
-| imageUrl    | The file name of the profile image with the file extension e.g. `yuhao-ba.jpg` <br/> <ul><li>Image should be placed in the `public/home` folder</li><li>File extension must be `.jpg`, `.jpeg`, `.png` or `.webp`</li><li>Image should be a square aspect ratio</li><li>Filename is case-sensitive</li> |
+| Key         | Value                                                                                                                                                                                                                                                                                    |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title       | The title of the page                                                                                                                                                                                                                                                                    |
+| description | The description on the page                                                                                                                                                                                                                                                              |
+| imageUrl    | The file path of the profile image with the file extension e.g. `./yuhao-ba.jpg` <br/> <ul><li>Image should be placed in the `src/content/home` folder</li><li>The file path must begin with `./`</li><li>Image should be a square aspect ratio</li><li>File path is case-sensitive</li> |
+
+**Note**: The site will throw a build error if there is no image at the specified file path.
 
 ### Research Page
 
@@ -48,14 +52,16 @@ Each list is sorted according to the first name in alphabetical order (case-inse
 
 The format is as follows:
 
-| Key                 | Value                                                                                                                                                                                                                                                                            |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| firstName           | The first name of the team member                                                                                                                                                                                                                                                |
-| lastName (optional) | The last name of the team member, and will be displayed in `ALL_CAPS`.                                                                                                                                                                                                           |
-| role                | The role of the team member                                                                                                                                                                                                                                                      |
-| description         | A short description of the team member                                                                                                                                                                                                                                           |
-| website (optional)  | The website of the team member                                                                                                                                                                                                                                                   |
-| imageUrl            | The file path to the profile image for the team member <br/> <ul><li>Image should be placed in the `public/team` folder</li><li>File extension must be `.jpg`, `.jpeg`, `.png` or `.webp`</li><li>Image should be a square aspect ratio</li><li>File name is case-sensitive</li> |
+| Key                 | Value                                                                                                                                                                                                                                                          |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| firstName           | The first name of the team member                                                                                                                                                                                                                              |
+| lastName (optional) | The last name of the team member, and will be displayed in `ALL_CAPS`.                                                                                                                                                                                         |
+| role                | The role of the team member                                                                                                                                                                                                                                    |
+| description         | A short description of the team member                                                                                                                                                                                                                         |
+| website (optional)  | The website of the team member                                                                                                                                                                                                                                 |
+| imageUrl            | The file path to the profile image for the team member <br/> <ul><li>Image should be placed in the `src/content/team` folder</li><li>The file path must begin with `./`</li><li>Image should be a square aspect ratio</li><li>File name is case-sensitive</li> |
+
+**Note**: The site will throw a build error if there is no image at the specified file path.
 
 ### Social Links
 

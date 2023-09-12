@@ -4,7 +4,7 @@
     "role": "Alumni",
     "description": "Google Indonesia",
     "website": "https://www.linkedin.com/in/kristiyanto-10650763/",
-    "imageUrl": "kristiyanto.jpg"
+    "imageUrl": "./kristiyanto.jpg"
   },
   {
     "firstName": "Jiatong",
@@ -12,13 +12,13 @@
     "role": "Alumni",
     "description": "Oxford Advanced Computer Science",
     "website": "https://jiatong-han.netlify.app/",
-    "imageUrl": "han-jiatong.jpg"
+    "imageUrl": "./han-jiatong.jpg"
   },
   {
     "firstName": "Haoyi",
     "lastName": "Tan",
     "role": "Alumni",
     "description": "NUS LKYSPP",
-    "imageUrl": "tan-haoyi.jpg"
+    "imageUrl": "./tan-haoyi.jpg"
   }
 ]

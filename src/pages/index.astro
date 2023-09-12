@@ -11,9 +11,7 @@ const { data } = await getEntry('home', 'home');
     <div class="flex flex-col space-y-6 sm:flex-row sm:space-x-12 sm:space-y-0">
       <div class="shrink-0 w-64 mx-auto">
         <Image
-          height="256px"
-          width="256px"
-          src={`/home/${data.imageUrl}`}
+          src={data.imageUrl}
           alt="Yuhao Ba"
           class="rounded-full h-64 aspect-square object-cover bg-gray-400 animate-pulse-fast"
           onload='this.classList.remove("animate-pulse-fast")'

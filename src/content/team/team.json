@@ -5,7 +5,7 @@
     "role": "Research Assistant",
     "description": "NUS Data Science & Analytics",
     "website": "https://www.linkedin.com/in/lee-zi-jie-41b659198/",
-    "imageUrl": "lee-zi-jie.jpg"
+    "imageUrl": "./lee-zi-jie.jpg"
   },
   {
     "firstName": "Fionna",
@@ -13,7 +13,7 @@
     "role": "Research Assistant",
     "description": "NUS Environmental Studies",
     "website": "https://www.linkedin.com/in/fionnahudison/",
-    "imageUrl": "fionna-hudison.jpg"
+    "imageUrl": "./fionna-hudison.jpg"
   },
   {
     "firstName": "Sze Koy",
@@ -21,6 +21,6 @@
     "role": "Research Assistant",
     "description": "Yale-NUS Environmental Sciences",
     "website": "https://sg.linkedin.com/in/sze-koy-ho-b45633232",
-    "imageUrl": "ho-sze-koy.jpg"
+    "imageUrl": "./ho-sze-koy.jpg"
   }
 ]

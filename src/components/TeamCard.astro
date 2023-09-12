@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 interface Props {
   firstName: string;
   lastName?: string;
@@ -17,20 +18,16 @@ const name = `${firstName} ${lastName ? lastName.toUpperCase() : ''}`.trim();
   img::before {
     @apply h-24 w-24 xs:h-32 xs:w-32 object-cover rounded-full;
   }
-
-  img::before {
-    @apply absolute block content-[''] bg-[url('/fallback.jpg')] bg-cover;
-  }
 </style>
 
 <div
   class="flex flex-row space-y-0 space-x-4 xs:flex-col xs:space-x-0 xs:space-y-2 md:flex-row md:space-y-0 md:space-x-4"
 >
   <div class="shrink-0">
-    <img
+    <Image
       class="bg-gray-400 animate-pulse-fast"
       alt={name}
-      src={`/team/${imageUrl}`}
+      src={imageUrl}
       onload='this.classList.remove("animate-pulse-fast")'
     />
   </div>

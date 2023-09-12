@@ -1,14 +1,13 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, type ImageFunction, z } from 'astro:content';
 
 const homeCollection = defineCollection({
   type: 'data',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    imageUrl: z
-      .string()
-      .refine((val) => val.endsWith('.jpg') || val.endsWith('.jpeg') || val.endsWith('.png') || val.endsWith('.webp')),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      imageUrl: image(),
+    }),
 });
 
 const socialCollection = defineCollection({
@@ -68,20 +67,19 @@ const dataCollection = defineCollection({
   schema: z.array(dataSchema),
 });
 
-const teamSchema = z.object({
-  firstName: z.string(),
-  lastName: z.string().optional(),
-  role: z.string(),
-  description: z.string(),
-  website: z.string().url().optional(),
-  imageUrl: z
-    .string()
-    .refine((val) => val.endsWith('.jpg') || val.endsWith('.jpeg') || val.endsWith('.png') || val.endsWith('.webp')),
-});
+const teamSchema = (image: ImageFunction) =>
+  z.object({
+    firstName: z.string(),
+    lastName: z.string().optional(),
+    role: z.string(),
+    description: z.string(),
+    website: z.string().url().optional(),
+    imageUrl: image(),
+  });
 
 const teamCollection = defineCollection({
   type: 'data',
-  schema: z.array(teamSchema),
+  schema: ({ image }) => z.array(teamSchema(image)),
 });
 
 export const collections = {
