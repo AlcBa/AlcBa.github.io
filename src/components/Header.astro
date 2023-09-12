@@ -1,21 +1,25 @@
 ---
 import { SITE_NAME } from '../consts';
+import { Image } from 'astro:assets';
 import Navbar from './Navbar.astro';
+import { ImageMetadata } from 'astro';
+const images = await Astro.glob('/src/content/header/*').then((files) => {
+  return files.map((file) => file.default);
+});
 ---
 
 <style>
   .header-image {
-    @apply w-full object-cover h-0 object-center opacity-0;
+    @apply w-full h-[210px] absolute object-cover object-center opacity-0;
   }
 
   .header-image.active {
-    @apply opacity-40 h-full;
+    @apply opacity-40;
   }
 </style>
 <script>
-  let i = Number(localStorage['header']) || 0;
   const headerImages = document.getElementsByClassName('header-image');
-
+  let i = Number(localStorage['header']) || 0;
   function nextImage() {
     localStorage['header'] = i;
     headerImages[i].classList.add('active');
@@ -45,8 +49,7 @@ import Navbar from './Navbar.astro';
 </script>
 
 <header class="bg-[#000000] text-gray-500 h-[210px] mb-8">
-  <img src={'/header1.jpg'} alt="header1" class="header-image" />
-  <img src={'/header2.jpg'} alt="header2" class="header-image" />
+  {images.map((i: ImageMetadata) => <Image src={i} alt="Header Image" class="header-image" loading="eager" />)}
   <div class="absolute w-full top-0">
     <h1 class="text-center py-16">
       <a href="/">{SITE_NAME}</a>

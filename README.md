@@ -4,8 +4,6 @@
 
 The data and images for each page is stored within the `src/content` folder. Other files such PDF documents are stored within the `public` folder, so that they're publicly accessible.
 
-**Note**: Header images are stored in the `public` folder to prevent Astro from optimising these images! Astro's image optimisation conflicts with the transitions between the images.
-
 ### Home Page
 
 Some information on the home page can be updated using the JSON file found in `src/content/home/home.json`.
