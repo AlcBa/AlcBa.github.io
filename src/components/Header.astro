@@ -20,6 +20,9 @@ const images = await Astro.glob('/src/content/header/*').then((files) => {
 <script>
   let i = Number(sessionStorage['header']) || 0;
   const headerImages = document.getElementsByClassName('header-image');
+  if (i >= headerImages.length) {
+    i = 0;
+  }
   function nextImage() {
     sessionStorage['header'] = i;
     headerImages[i].classList.add('active');
