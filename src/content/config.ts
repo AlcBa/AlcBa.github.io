@@ -44,17 +44,14 @@ const researchCollection = defineCollection({
   schema: z.array(researchSchema),
 });
 
-const courseSchema = z.object({
+const teachingSchema = z.object({
   title: z.string(),
-  description: z.string().optional(),
+  description: z.string(),
 });
 
 const teachingCollection = defineCollection({
   type: 'data',
-  schema: z.object({
-    philosophy: z.string(),
-    courses: z.array(courseSchema),
-  }),
+  schema: z.array(teachingSchema),
 });
 
 const dataSchema = z.object({

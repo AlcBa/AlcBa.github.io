@@ -37,10 +37,10 @@ The information on the teaching page can be updated using the JSON file found in
 
 The format is as follows:
 
-| Key        | Value                                            |
-| ---------- | ------------------------------------------------ |
-| philosophy | The description of teaching philosophy           |
-| courses    | A title and optional description for each course |
+| Key         | Value                        |
+| ----------- | ---------------------------- |
+| title       | The title of course          |
+| description | A description for the course |
 
 ### Team page
 

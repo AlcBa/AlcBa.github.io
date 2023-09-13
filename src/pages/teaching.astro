@@ -4,14 +4,10 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { getEntry } from 'astro:content';
 import CourseCard from '../components/CourseCard.astro';
 
-const { data } = await getEntry('teaching', 'teaching');
-const { philosophy, courses } = data;
+const { data: courses } = await getEntry('teaching', 'teaching');
 ---
 
 <PageLayout title="Teaching">
-  <h2 class="mb-4">Teaching Philosophy</h2>
-  <p>{philosophy}</p>
-  <h2 class="mt-12 mb-4">Courses</h2>
   <div class="space-y-3">
     {courses.map((c) => <CourseCard title={c.title} description={c.description} />)}
   </div>
