@@ -15,7 +15,7 @@ const { data: alumni } = await getEntry('team', 'alumni');
 </style>
 
 <PageLayout title="Team">
-  <div class="team-container pt-8">
+  <div class="team-container pt-4 xs:pt-8">
     {team.length === 0 && <p>No team found.</p>}
     {
       team
