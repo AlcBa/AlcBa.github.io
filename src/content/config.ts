@@ -58,6 +58,7 @@ const teachingCollection = defineCollection({
 const dataSchema = z.object({
   title: z.string(),
   description: z.string(),
+  link: z.string().url().optional(),
 });
 
 const dataCollection = defineCollection({

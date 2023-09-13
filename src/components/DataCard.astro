@@ -1,8 +1,23 @@
 ---
-const { title, description } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  link?: URL;
+}
+
+const { title, description, link } = Astro.props;
 ---
 
 <div class="card">
-  <h3>{title}</h3>
-  <p>{description}</p>
+  <div class="w-full flex justify-between items-start mb-2">
+    <h3>{title}</h3>
+    {
+      link && (
+        <a class="btn text-xs" href={link}>
+          Link
+        </a>
+      )
+    }
+  </div>
+  <p class="text-gray-300 font-light mb-2">{description}</p>
 </div>
