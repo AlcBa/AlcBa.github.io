@@ -8,7 +8,7 @@ const { data: courses } = await getEntry('teaching', 'teaching');
 ---
 
 <PageLayout title="Teaching">
-  <div class="space-y-3">
-    {courses.map((c) => <CourseCard title={c.title} description={c.description} />)}
+  <div class="space-y-3 px-6">
+    {courses.map((c) => <CourseCard title={c.title} school={c.school} description={c.description} />)}
   </div>
 </PageLayout>

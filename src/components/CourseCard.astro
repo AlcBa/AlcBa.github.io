@@ -1,13 +1,15 @@
 ---
 interface Props {
   title: string;
-  description?: string;
+  school: string;
+  description: string;
 }
 
-const { title, description } = Astro.props;
+const { title, school, description } = Astro.props;
 ---
 
 <div class="card">
+  <p class="text-gray-300 mb-0.5">{school}</p>
   <h3>{title}</h3>
-  {description && <p class="mt-2">{description}</p>}
+  {description && <p class="mt-1.5">{description}</p>}
 </div>

@@ -1,26 +1,32 @@
 [
   {
     "title": "PP5409: Foundations for Public Policy",
-    "description": "Graduate course, National University of Singapore, 2023"
+    "school": "National University of Singapore",
+    "description": "Graduate course, 2023"
   },
   {
     "title": "PP5537: Programming R for Policy Analytics",
-    "description": "Graduate course, National University of Singapore, 2022"
+    "school": "National University of Singapore",
+    "description": "Graduate course, 2022, 2023, 2024"
   },
   {
     "title": "PP5297: Public Policy for Sustainability",
-    "description": "Graduate course, National University of Singapore, 2022"
+    "school": "National University of Singapore",
+    "description": "Graduate course, 2022"
   },
   {
     "title": "PP5179: Environmental Social Sciences",
-    "description": "Graduate course, National University of Singapore, 2021"
+    "school": "National University of Singapore",
+    "description": "Graduate course, 2021, 2023"
   },
   {
     "title": "PS371: Research Methods for Political Science",
-    "description": "Graduate course, North Carolina State University, 2020"
+    "school": "North Carolina State University",
+    "description": "Graduate course, 2020"
   },
   {
     "title": "PS312: Introduction to Public Administration",
-    "description": "Graduate course, North Carolina State University, 2018"
+    "school": "North Carolina State University",
+    "description": "Graduate course, 2018"
   }
 ]
