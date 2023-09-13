@@ -10,7 +10,7 @@ const images = await Astro.glob('/src/content/header/*').then((files) => {
 
 <style>
   .header-image {
-    @apply w-full h-[214px] absolute object-cover object-center opacity-0;
+    @apply w-full h-[211px] absolute object-cover object-center opacity-0;
   }
 
   .header-image.active {
@@ -48,10 +48,10 @@ const images = await Astro.glob('/src/content/header/*').then((files) => {
   nextImage();
 </script>
 
-<header class="bg-[#000000] text-gray-500 h-[214px] mb-8">
+<header class="bg-[#000000] text-gray-500 h-[211px] mb-8">
   {images.map((i: ImageMetadata) => <Image src={i} alt="Header Image" class="header-image" loading="eager" />)}
   <div class="absolute w-full top-0">
-    <h1 class="text-center py-16">
+    <h1 class="text-center py-12">
       <a href="/">{SITE_NAME}</a>
     </h1>
     <Navbar />
