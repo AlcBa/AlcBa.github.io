@@ -1,15 +1,18 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+const baseUrl = Astro.site;
+import { getEntry } from 'astro:content';
+const { data } = await getEntry('cv', 'cv');
 ---
 
 <PageLayout title="CV">
   <div class="mb-8">
     <iframe
       class="h-[700px] w-full"
-      src={`https://drive.google.com/viewerng/viewer?embedded=true&url=https://alcba.lesterong.com/cv/cv.pdf`}
+      src={`https://drive.google.com/viewerng/viewer?embedded=true&url=${baseUrl}cv/${data.pdfUrl}`}
       allow="autoplay"></iframe>
   </div>
   <div class="w-full text-center">
-    <a class="btn text-sm" href="/cv/cv.pdf" download>Download CV</a>
+    <a class="btn text-sm" href=`/cv/${data.pdfUrl}` download>Download CV</a>
   </div>
 </PageLayout>

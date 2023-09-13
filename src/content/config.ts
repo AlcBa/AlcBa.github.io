@@ -82,6 +82,13 @@ const teamCollection = defineCollection({
   schema: ({ image }) => z.array(teamSchema(image)),
 });
 
+const cvCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    pdfUrl: z.string().endsWith('.pdf'),
+  }),
+});
+
 export const collections = {
   home: homeCollection,
   social: socialCollection,
@@ -89,4 +96,5 @@ export const collections = {
   teaching: teachingCollection,
   data: dataCollection,
   team: teamCollection,
+  cv: cvCollection,
 };
