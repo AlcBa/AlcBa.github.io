@@ -9,7 +9,7 @@ const { data: workingpapers } = await getEntry('research', 'workingpapers');
 ---
 
 <PageLayout title="Research">
-  <div class="space-y-3">
+  <div>
     <h2 class="mb-4">Publications</h2>
     {publications.length === 0 && <p>No publications currently.</p>}
     {
@@ -19,7 +19,7 @@ const { data: workingpapers } = await getEntry('research', 'workingpapers');
     }
   </div>
 
-  <div class="space-y-3">
+  <div>
     <h2 class="mt-12 mb-4">Working Papers</h2>
     {workingpapers.length === 0 && <p>No working papers currently.</p>}
     {
