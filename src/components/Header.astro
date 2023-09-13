@@ -49,7 +49,11 @@ const images = await Astro.glob('/src/content/header/*').then((files) => {
 </script>
 
 <header class="bg-[#000000] text-gray-500 h-[211px] mb-8">
-  {images.map((i: ImageMetadata) => <Image src={i} alt="Header Image" class="header-image" loading="eager" />)}
+  {
+    images.map((i: ImageMetadata) => (
+      <Image src={i} alt="Header Image" class="header-image" loading="eager" format="jpg" />
+    ))
+  }
   <div class="absolute w-full top-0">
     <h1 class="text-center py-12">
       <a href="/">{SITE_NAME}</a>
