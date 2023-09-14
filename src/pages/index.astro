@@ -3,12 +3,14 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 import { getEntry } from 'astro:content';
 import SocialLinks from '../components/SocialLinks.astro';
-const { data } = await getEntry('home', 'home');
+const entry = await getEntry('home', 'home');
+const { data } = entry;
+const { Content } = await entry.render();
 ---
 
 <PageLayout title="Home">
-  <div class="grid place-items-center min-h-[600px] sm:min-h-[400px] h-[calc(100vh-319px)] content-center">
-    <div class="flex flex-col space-y-6 sm:flex-row sm:space-x-12 sm:space-y-0">
+  <div class="grid place-items-center min-h-[600px] sm:min-h-[400px] content-center">
+    <div class="flex flex-col space-y-6 sm:flex-row sm:space-x-14 sm:space-y-0">
       <div class="shrink-0 w-64 mx-auto">
         <Image
           src={data.imageUrl}
@@ -32,10 +34,10 @@ const { data } = await getEntry('home', 'home');
         <SocialLinks />
       </div>
       <div>
-        <h2>{data.title}</h2>
-        <p class="mt-3">
-          {data.description}
-        </p>
+        <h2 class="mb-2">{data.title}</h2>
+        <div class="prose">
+          <Content />
+        </div>
       </div>
     </div>
   </div>

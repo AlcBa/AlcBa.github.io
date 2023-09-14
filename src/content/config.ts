@@ -1,11 +1,10 @@
 import { defineCollection, type ImageFunction, z } from 'astro:content';
 
 const homeCollection = defineCollection({
-  type: 'data',
+  type: 'content',
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      description: z.string(),
       imageUrl: image(),
     }),
 });

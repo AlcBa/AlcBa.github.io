@@ -6,15 +6,23 @@ The data and images for each page is stored within the `src/content` folder. Oth
 
 ### Home Page
 
-Some information on the home page can be updated using the JSON file found in `src/content/home/home.json`.
+Some information on the home page can be updated using the Markdown file found in `src/content/home/home.md`.
 
 The format is as follows:
 
-| Key         | Value                                                                                                                                                                                                                                                                                    |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| title       | The title of the page                                                                                                                                                                                                                                                                    |
-| description | The description on the page                                                                                                                                                                                                                                                              |
-| imageUrl    | The file path of the profile image with the file extension e.g. `./yuhao-ba.jpg` <br/> <ul><li>Image should be placed in the `src/content/home` folder</li><li>The file path must begin with `./`</li><li>Image should be a square aspect ratio</li><li>File path is case-sensitive</li> |
+| Key      | Value                                                                                                                                                                                                                                                                                    |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title    | The title of the page                                                                                                                                                                                                                                                                    |
+| imageUrl | The file path of the profile image with the file extension e.g. `./yuhao-ba.jpg` <br/> <ul><li>Image should be placed in the `src/content/home` folder</li><li>The file path must begin with `./`</li><li>Image should be a square aspect ratio</li><li>File path is case-sensitive</li> |
+
+```markdown
+---
+title: 'The title of the page'
+imageUrl: ./yuhao-ba.jpg
+---
+
+Content
+```
 
 > [!WARNING]
 > The site will not build if the image at the specified file path does not exist.
