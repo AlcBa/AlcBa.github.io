@@ -10,18 +10,26 @@ Some information on the home page can be updated using the Markdown file found i
 
 The format is as follows:
 
-| Key      | Value                                                                                                                                                                                                                                                                                    |
-| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| title    | The title of the page                                                                                                                                                                                                                                                                    |
-| imageUrl | The file path of the profile image with the file extension e.g. `./yuhao-ba.jpg` <br/> <ul><li>Image should be placed in the `src/content/home` folder</li><li>The file path must begin with `./`</li><li>Image should be a square aspect ratio</li><li>File path is case-sensitive</li> |
+| Key        | Value                                                                                                                                                                                                                                                                                    |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title      | The title of the page                                                                                                                                                                                                                                                                    |
+| role       | The role, e.g. Professor                                                                                                                                                                                                                                                                 |
+| faculty    | The faculty, will be linked to faculty url                                                                                                                                                                                                                                               |
+| school     | The school e.g. National University of Singapore                                                                                                                                                                                                                                         |
+| facultyUrl | The faculty url to link to                                                                                                                                                                                                                                                               |
+| imageUrl   | The file path of the profile image with the file extension e.g. `./yuhao-ba.jpg` <br/> <ul><li>Image should be placed in the `src/content/home` folder</li><li>The file path must begin with `./`</li><li>Image should be a square aspect ratio</li><li>File path is case-sensitive</li> |
 
 ```markdown
 ---
 title: 'The title of the page'
+role: 'Assistant Professor'
+faculty: 'Lee Kuan Yew School of Public Policy'
+school: 'National University of Singapore'
+facultyUrl: 'https://lkyspp.nus.edu.sg/our-people/faculty/ba-yuhao'
 imageUrl: ./yuhao-ba.jpg
 ---
 
-Content
+Content on home page
 ```
 
 > [!WARNING]

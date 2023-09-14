@@ -5,6 +5,10 @@ const homeCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      role: z.string(),
+      faculty: z.string(),
+      school: z.string(),
+      facultyUrl: z.string().url(),
       imageUrl: image(),
     }),
 });

@@ -1,5 +1,9 @@
 ---
 title: 'Welcome to my website'
+role: 'Assistant Professor'
+faculty: 'Lee Kuan Yew School of Public Policy'
+school: 'National University of Singapore'
+facultyUrl: 'https://lkyspp.nus.edu.sg/our-people/faculty/ba-yuhao'
 imageUrl: './yuhao-ba.jpg'
 ---
 

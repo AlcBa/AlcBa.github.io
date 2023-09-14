@@ -21,17 +21,12 @@ const { Content } = await entry.render();
             format="jpg"
           />
           <p class="text-sm text-center mt-3">
-            Assistant Professor at
-            <a
-              class="link"
-              href="https://lkyspp.nus.edu.sg/our-people/faculty/ba-yuhao"
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              Lee Kuan Yew School of Public Policy
+            {data.role} at
+            <a class="link" href={data.facultyUrl} rel="noreferrer noopener" target="_blank">
+              {data.faculty}
             </a>
           </p>
-          <p class="text-sm text-center mb-5">National University of Singapore</p>
+          <p class="text-sm text-center mb-5">{data.school}</p>
           <SocialLinks />
         </div>
       </div>
