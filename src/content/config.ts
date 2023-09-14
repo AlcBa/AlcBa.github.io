@@ -62,7 +62,10 @@ const dataSchema = z.object({
 
 const dataCollection = defineCollection({
   type: 'data',
-  schema: z.array(dataSchema),
+  schema: z.object({
+    description: z.string(),
+    data: z.array(dataSchema),
+  }),
 });
 
 const teamSchema = (image: ImageFunction) =>

@@ -1,10 +1,13 @@
-[
-  {
-    "title": "Lorem",
-    "description": "Ipsum IpsumIpsumIpsumIpsumIpsumIpsum IpsumIpsumIpsumIpsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum"
-  },
-  {
-    "title": "Lorem",
-    "description": "Ipsum"
-  }
-]
+{
+  "description": "Good data inform and ground evidence-based policy making and research. On this page, you can find some of the datasets I have built, maintained, and/or used in my research.",
+  "data": [
+    {
+      "title": "Lorem",
+      "description": "Ipsum IpsumIpsumIpsumIpsumIpsumIpsum IpsumIpsumIpsumIpsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum"
+    },
+    {
+      "title": "Lorem",
+      "description": "Ipsum"
+    }
+  ]
+}

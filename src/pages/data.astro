@@ -4,11 +4,16 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { getEntry } from 'astro:content';
 import DataCard from '../components/DataCard.astro';
 
-const { data } = await getEntry('data', 'data');
+const { data: entry } = await getEntry('data', 'data');
+const { data, description } = entry;
 ---
 
 <PageLayout title="Data">
   <div class="px-0 md:px-6">
+    <p>
+      {description}
+    </p>
+    <h2 class="mt-8 mb-4">Data</h2>
     {data.map((d) => <DataCard title={d.title} link={d.link} description={d.description} />)}
   </div>
 </PageLayout>

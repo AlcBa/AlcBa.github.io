@@ -58,6 +58,13 @@ The information on the data page can be updated using the JSON file found in `sr
 
 The format is as follows:
 
+| Key         | Value                                        |
+| ----------- | -------------------------------------------- |
+| description | The description of the page                  |
+| data        | The collection of data displayed on the page |
+
+The format of each data is as follows:
+
 | Key             | Value                                                       |
 | --------------- | ----------------------------------------------------------- |
 | title           | The title of the data                                       |
