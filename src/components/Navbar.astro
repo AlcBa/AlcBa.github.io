@@ -12,6 +12,17 @@ const currentPath = Astro.url.pathname;
   }
 </style>
 
+<script>
+  const navbar = document.querySelector('nav');
+  if (sessionStorage['navbar-scroll']) {
+    navbar.scrollLeft = Number(sessionStorage['navbar-scroll']) || 0;
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    sessionStorage['navbar-scroll'] = navbar.scrollLeft;
+  });
+</script>
+
 <nav class="flex mx-auto max-w-4xl justify-start overflow-x-scroll">
   <a class={currentPath === '/' ? 'active' : ''} href="/">Home</a>
   <a class={/\/research(\/)?/.test(currentPath) ? 'active' : ''} href="/research/">Research</a>
