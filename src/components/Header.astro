@@ -23,6 +23,7 @@ const images = await Astro.glob('/src/content/header/*').then((files) => {
   if (i >= headerImages.length) {
     i = 0;
   }
+  headerImages[i].classList.add('active');
   function nextImage() {
     sessionStorage['header'] = i;
     headerImages[i].classList.add('active');
@@ -38,17 +39,18 @@ const images = await Astro.glob('/src/content/header/*').then((files) => {
       headerImages[i - 1].classList.remove('active');
     }
 
+    headerImages[i].classList.add('transition-opacity');
+    headerImages[i].classList.add('duration-500');
+
     i++;
+
     if (i === headerImages.length) {
       i = 0;
     }
 
-    headerImages[i].classList.add('transition-opacity');
-    headerImages[i].classList.add('duration-500');
-
     setTimeout(nextImage, 6000);
   }
-  nextImage();
+  setTimeout(nextImage, 1000);
 </script>
 
 <header class="bg-[#000000] text-gray-500 h-[211px] mb-8">
