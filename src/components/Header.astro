@@ -50,6 +50,9 @@ const images = await Astro.glob('/src/content/header/*').then((files) => {
 
     setTimeout(nextImage, 6000);
   }
+
+  // This timeout provides time for the other header images to load
+  // Before we perform the transitions
   setTimeout(nextImage, 1000);
 </script>
 
