@@ -32,6 +32,9 @@ imageUrl: ./yuhao-ba.jpg
 Content on home page
 ```
 
+> [!NOTE]
+> The site description will update according to the role, faculty and school.
+
 > [!WARNING]
 > The site will not build if the image at the specified file path does not exist.
 

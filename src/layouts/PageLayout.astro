@@ -1,10 +1,13 @@
 ---
 import '../components/GlobalStyles.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_DESCRIPTION, SITE_NAME } from '../consts';
+import { SITE_NAME } from '../consts';
+import { getEntry } from 'astro:content';
+const { data } = await getEntry('home', 'home');
 import Header from '../components/Header.astro';
 const { title } = Astro.props;
 const currentPath = Astro.url.pathname;
+const SITE_DESCRIPTION = `${data.role} at ${data.faculty}, ${data.school}`;
 ---
 
 <html lang="en">
@@ -15,6 +18,8 @@ const currentPath = Astro.url.pathname;
     <link rel="icon" type="image/png" href="/favicon32.png" />
     <link rel="apple-touch-icon" href="/favicon192.png" />
     <meta property="og:type" content="website" />
+    <meta name="og:title" content={SITE_NAME} />
+    <meta name="og:description" content={SITE_DESCRIPTION} />
     <meta property="og:image" content="/favicon192.png" />
     <meta property="og:image:alt" content={SITE_NAME} />
     <meta name="twitter:card" content="summary" />
