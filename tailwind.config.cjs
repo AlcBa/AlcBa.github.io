@@ -37,10 +37,10 @@ module.exports = {
               color: theme('colors.blue-300'),
               '&:hover': {
                 color: theme('colors.blue-400'),
+                textDecoration: 'underline',
               },
               textDecoration: 'none',
             },
-            // ...
           },
         },
       }),

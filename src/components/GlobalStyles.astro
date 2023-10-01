@@ -28,10 +28,11 @@ import '@fontsource-variable/karla';
   }
 
   .link {
-    @apply text-blue-300 hover:text-blue-400;
+    @apply text-blue-300 hover:underline hover:text-blue-400;
   }
 
   .btn {
-    @apply py-1 px-2 text-blue-300 border border-blue-300 rounded-md hover:text-blue-400 hover:border-blue-400;
+    @apply py-1 px-2 text-blue-300 transition-colors duration-200 border border-blue-300 rounded-md
+    hover:text-blue-400 hover:border-blue-400;
   }
 </style>
