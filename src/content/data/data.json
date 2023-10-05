@@ -3,7 +3,8 @@
   "data": [
     {
       "title": "Lorem",
-      "description": "Ipsum IpsumIpsumIpsumIpsumIpsumIpsum IpsumIpsumIpsumIpsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum"
+      "description": "Ipsum IpsumIpsumIpsumIpsumIpsumIpsum IpsumIpsumIpsumIpsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum Ipsum",
+      "link": "https://google.com"
     },
     {
       "title": "Lorem",
