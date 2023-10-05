@@ -4,7 +4,7 @@ import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://alcba.lesterong.com',
+  site: 'https://www.bayuhao.org',
   markdown: {
     rehypePlugins: [
       [
