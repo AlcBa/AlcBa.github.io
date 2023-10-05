@@ -108,9 +108,9 @@ The file path to the CV can be updated using the JSON file found in `src/content
 
 The format is as follows:
 
-| Key    | Value                                                                                                                                                                                                                           |
-| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| pdfUrl | The link to the PDF file, with the `.pdf` file extension e.g. `cv.pdf` <br/> <ul><li>PDF Document should be placed in the `public/cv` folder</li><li>File extension must end in `.pdf`</li><li>File name is case-sensitive</li> |
+| Key    | Value                                                                                                                                                                                                                                                                                                                 |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| pdfUrl | The shared link to the PDF file in Google Drive with the `FILE_CODE`<br/> <ul><li>The shared link should look like `drive.google.com/file/d/FILE_CODE/view?usp=sharing`, only input the file code e.g. `1x2TcHfRDjqN6tNOg4Fi9vL2zhXLFSj0x`</li><li>Sharing settings should be set to 'Anyone with the link'</li></ul> |
 
 ### Header images
 

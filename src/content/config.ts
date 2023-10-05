@@ -90,7 +90,7 @@ const teamCollection = defineCollection({
 const cvCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    pdfUrl: z.string().endsWith('.pdf'),
+    pdfUrl: z.string(),
   }),
 });
 
