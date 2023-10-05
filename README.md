@@ -50,6 +50,7 @@ The format is as follows:
 | publication (optional) | The journal or book where the paper is published                                                                                                                                                                                           |
 | authors                | The authors of the paper                                                                                                                                                                                                                   |
 | pdfUrl (optional)      | The link to the PDF file, with the `.pdf` file extension e.g. `paper 1.pdf` <br/> <ul><li>PDF Document should be placed in the `public/research` folder</li><li>File extension must end in `.pdf`</li><li>File name is case-sensitive</li> |
+| doi (optional)         | The doi link to the paper, must begin with `https://` or `http://`.                                                                                                                                                                        |
 
 ### Teaching page
 

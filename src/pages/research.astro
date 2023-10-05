@@ -14,7 +14,7 @@ const { data: workingpapers } = await getEntry('research', 'workingpapers');
     {publications.length === 0 && <p>No publications currently.</p>}
     {
       publications.map((p) => (
-        <ResearchCard title={p.title} publication={p.publication} authors={p.authors} pdfUrl={p.pdfUrl} />
+        <ResearchCard title={p.title} publication={p.publication} authors={p.authors} pdfUrl={p.pdfUrl} doi={p.doi} />
       ))
     }
   </div>
@@ -24,7 +24,7 @@ const { data: workingpapers } = await getEntry('research', 'workingpapers');
     {workingpapers.length === 0 && <p>No working papers currently.</p>}
     {
       workingpapers.map((p) => (
-        <ResearchCard title={p.title} publication={p.publication} authors={p.authors} pdfUrl={p.pdfUrl} />
+        <ResearchCard title={p.title} publication={p.publication} authors={p.authors} pdfUrl={p.pdfUrl} doi={p.doi} />
       ))
     }
   </div>

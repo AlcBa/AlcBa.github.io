@@ -40,6 +40,7 @@ const researchSchema = z.object({
     .string()
     .refine((val) => val.endsWith('.pdf'))
     .optional(),
+  doi: z.string().url().optional(),
 });
 
 const researchCollection = defineCollection({
