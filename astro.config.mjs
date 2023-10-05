@@ -4,7 +4,7 @@ import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.bayuhao.org',
+  site: 'https://bayuhao.org',
   markdown: {
     rehypePlugins: [
       [
