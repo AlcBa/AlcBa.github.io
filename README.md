@@ -77,11 +77,11 @@ The format is as follows:
 
 The format of each data is as follows:
 
-| Key             | Value                                                       |
-| --------------- | ----------------------------------------------------------- |
-| title           | The title of the data                                       |
-| description     | The description of the data                                 |
-| link (optional) | A link to the data, must begin with `http://` or `https://` |
+| Key             | Value                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------- |
+| title           | The title of the data                                                                                                |
+| description     | The description of the data <ul><li>Support for certain markdown elements, such as links, bold and italics</li></ul> |
+| link (optional) | A link to the data, must begin with `http://` or `https://`                                                          |
 
 ### Team page
 

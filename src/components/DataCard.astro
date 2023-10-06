@@ -1,4 +1,7 @@
 ---
+import * as marked from 'marked';
+import sanitizeHtml from 'sanitize-html';
+
 interface Props {
   title: string;
   description: string;
@@ -6,6 +9,18 @@ interface Props {
 }
 
 const { title, description, link } = Astro.props;
+
+const renderer = {
+  link(href: string, title: string, text: string) {
+    return `<a class='link' href=${href} target="_blank">${text}</a>`;
+  },
+};
+marked.use({ renderer });
+const parsedDescription = sanitizeHtml(marked.parse(description), {
+  allowedAttributes: {
+    a: ['href', 'class', 'target'],
+  },
+});
 ---
 
 <div class="card">
@@ -13,11 +28,11 @@ const { title, description, link } = Astro.props;
     <h3>{title}</h3>
     {
       link && (
-        <a class="btn text-xs" href={link}>
+        <a class="btn text-xs" href={link} target="_blank">
           Link
         </a>
       )
     }
   </div>
-  <p class="text-gray-200 font-light mb-2">{description}</p>
+  <div class="text-gray-200 mb-2" set:html={parsedDescription} />
 </div>
