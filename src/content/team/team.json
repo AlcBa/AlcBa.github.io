@@ -11,9 +11,25 @@
     "firstName": "Zhenbo Bill",
     "lastName": "Zhong",
     "role": "PhD Student",
-    "description": "LKYSPP",
+    "description": "NUS LKYSPP",
     "website": "https://www.linkedin.com/in/zhenbo-zhpng-71382b231/",
     "imageUrl": "./zhong-zhen-bo.jpg"
+  },
+  {
+    "firstName": "Yinfeng",
+    "lastName": "Liang",
+    "role": "Visiting Student",
+    "description": "Peking University",
+    "website": "www.linkedin.com/in/yinfeng-liang-112589322/",
+    "imageUrl": "./liang-yin-feng.jpg"
+  },
+  {
+    "firstName": "Xueqi",
+    "lastName": "Bai",
+    "role": "Research Assistant",
+    "description": "NUS Economics",
+    "website": "www.linkedin.com/in/xueqi-bai-316517221/",
+    "imageUrl": "./bai-xue-qi.jpg"
   },
   {
     "firstName": "Shanyue",
@@ -22,6 +38,14 @@
     "description": "Cornell Jeb E. Brooks School of Public Policy",
     "website": "https://www.linkedin.com/in/shanyue-wang-3185a3291/",
     "imageUrl": "./wang-shan-yue.jpg"
+  },
+  {
+    "firstName": "Parvathy",
+    "lastName": "Sailesh",
+    "role": "PhD Student",
+    "description": "NUS LKYSPP",
+    "website": "https://www.linkedin.com/in/parvathy-sailesh/",
+    "imageUrl": "./Parvathy-Sailesh.png"
   },
   {
     "firstName": "Fionna",
