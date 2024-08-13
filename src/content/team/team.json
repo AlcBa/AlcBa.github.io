@@ -8,6 +8,14 @@
     "imageUrl": "./zhong-zhen-bo.jpg"
   },
   {
+    "firstName": "Yuxi",
+    "lastName": "Ba",
+    "role": "Research Assistant",
+    "description": "NUS Economics",
+    "website": "https://www.linkedin.com/in/yuxi-ba-abby/",
+    "imageUrl": "./ba-yu-xi.jpg"
+  },
+  {
     "firstName": "Yinfeng",
     "lastName": "Liang",
     "role": "Visiting Student",
