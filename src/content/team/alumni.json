@@ -1,5 +1,13 @@
 [
   {
+    "firstName": "Zounachuan",
+    "lastName": "Sun",
+    "role": "Alumni",
+    "description": "Hongkong University",
+    "website": "https://www.linkedin.com/in/zounachuan-sun-rina/",
+    "imageUrl": "./Sun-Zounachuan.jpg"
+  },
+  {
     "firstName": "Zi Jie",
     "lastName": "Lee",
     "role": "Alumni",
