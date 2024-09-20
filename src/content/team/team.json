@@ -46,13 +46,5 @@
     "description": "NUS LKYSPP",
     "website": "https://www.linkedin.com/in/parvathy-sailesh/",
     "imageUrl": "./Parvathy-Sailesh.jpg"
-  },
-  {
-    "firstName": "Fionna",
-    "lastName": "Hudison",
-    "role": "Research Assistant",
-    "description": "NUS Environmental Studies",
-    "website": "https://www.linkedin.com/in/fionnahudison/",
-    "imageUrl": "./fionna-hudison.jpg"
   }
 ]
