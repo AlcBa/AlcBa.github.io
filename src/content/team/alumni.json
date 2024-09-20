@@ -36,5 +36,12 @@
     "role": "Alumni",
     "description": "Tsinghua University",
     "imageUrl": "./tan-haoyi.jpg"
+  },
+  {
+    "firstName": "Fionna",
+    "lastName": "Hudison",
+    "role": "Alumni",
+    "description": "NUS Environmental Studies",
+    "imageUrl": "./fionna-hudison.jpg"
   }
 ]
