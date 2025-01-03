@@ -1,13 +1,5 @@
 [
   {
-    "firstName": "Zhenbo Bill",
-    "lastName": "Zhong",
-    "role": "PhD Student",
-    "description": "NUS LKYSPP",
-    "website": "https://www.linkedin.com/in/zhenbo-zhpng-71382b231/",
-    "imageUrl": "./zhong-zhen-bo.jpg"
-  },
-  {
     "firstName": "Yuxi",
     "lastName": "Ba",
     "role": "Research Assistant",
@@ -38,13 +30,5 @@
     "description": "Cornell University",
     "website": "https://www.linkedin.com/in/shanyue-wang-3185a3291/",
     "imageUrl": "./wang-shan-yue.jpg"
-  },
-  {
-    "firstName": "Parvathy",
-    "lastName": "Sailesh",
-    "role": "PhD Student",
-    "description": "NUS LKYSPP",
-    "website": "https://www.linkedin.com/in/parvathy-sailesh/",
-    "imageUrl": "./Parvathy-Sailesh.jpg"
   }
 ]
