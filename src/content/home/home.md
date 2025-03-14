@@ -7,7 +7,7 @@ facultyUrl: 'https://lkyspp.nus.edu.sg/our-people/faculty/ba-yuhao'
 imageUrl: './yuhao-ba.jpg'
 ---
 
-I am an Assistant Professor in Public Policy at the Lee Kuan Yew School of Public Policy at the National University of Singapore. From 2024 to 2027, I serve on the committee co-directing the PhD in Public Policy Programme at the LKY School. Additionally, from January to June 2025, I will be a visiting scholar at the University of Pennsylvania’s [School of Social Policy and Practice](https://sp2.upenn.edu).
+I am an Assistant Professor in Public Policy at the Lee Kuan Yew School of Public Policy at the National University of Singapore. From 2024 to 2027, I serve on the committee co-directing the PhD in Public Policy Programme at the LKY School. Additionally, from January to June 2025, I will be a visiting scholar at the University of Pennsylvania’s [School of Social Policy \& Practice](https://sp2.upenn.edu).
 
 My [research](/research) explores how stakeholders from the private and nonprofit sectors work with the government to collectively address policy challenges within the realm of environment and sustainability. My work encompasses several interdisciplinary domains, including public policy and administration, non-state and subnational environmental action, as well as performance evaluation and management.
 
