@@ -1,6 +1,11 @@
 ---
 import { getEntry } from 'astro:content';
 const entry = await getEntry('social', 'social');
+
+if (!entry) {
+  throw new Error('Could not find social');
+}
+
 const { data } = entry;
 ---
 
