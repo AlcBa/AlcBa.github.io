@@ -4,7 +4,11 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { getEntry } from 'astro:content';
 import CourseCard from '../components/CourseCard.astro';
 
-const { data: courses } = await getEntry('teaching', 'teaching');
+const entry = await getEntry('teaching', 'teaching');
+if (!entry) {
+  throw new Error('Could not find teaching');
+}
+const { data: courses } = entry;
 ---
 
 <PageLayout title="Teaching">

@@ -4,8 +4,18 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { getEntry } from 'astro:content';
 import TeamCard from '../components/TeamCard.astro';
 
-const { data: team } = await getEntry('team', 'team');
-const { data: alumni } = await getEntry('team', 'alumni');
+const teamEntry = await getEntry('team', 'team');
+if (!teamEntry) {
+  throw new Error('Could not find team');
+}
+
+const alumniEntry = await getEntry('team', 'alumni');
+if (!alumniEntry) {
+  throw new Error('Could not find alumni');
+}
+
+const { data: team } = teamEntry;
+const { data: alumni } = alumniEntry;
 ---
 
 <style>

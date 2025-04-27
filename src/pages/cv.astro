@@ -1,7 +1,13 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { getEntry } from 'astro:content';
-const { data } = await getEntry('cv', 'cv');
+const entry = await getEntry('cv', 'cv');
+
+if (!entry) {
+  throw new Error('Could not find CV');
+}
+
+const { data } = entry;
 ---
 
 <PageLayout title="CV">

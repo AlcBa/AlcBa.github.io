@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
-const { data } = await getEntry('social', 'social');
+const entry = await getEntry('social', 'social');
+const { data } = entry;
 ---
 
 <style>

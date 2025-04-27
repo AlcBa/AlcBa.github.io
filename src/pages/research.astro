@@ -4,8 +4,19 @@ import ResearchCard from '../components/ResearchCard.astro';
 
 import { getEntry } from 'astro:content';
 
-const { data: publications } = await getEntry('research', 'publications');
-const { data: workingpapers } = await getEntry('research', 'workingpapers');
+const publicationsEntry = await getEntry('research', 'publications');
+const workingPapersEntry = await getEntry('research', 'workingpapers');
+
+if (!publicationsEntry) {
+  throw new Error('Could not find publications');
+}
+
+if (!workingPapersEntry) {
+  throw new Error('Could not find working papers');
+}
+
+const { data: publications } = publicationsEntry;
+const { data: workingpapers } = workingPapersEntry;
 ---
 
 <PageLayout title="Research">

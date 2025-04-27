@@ -4,7 +4,13 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { getEntry } from 'astro:content';
 import DataCard from '../components/DataCard.astro';
 
-const { data: entry } = await getEntry('data', 'data');
+const dataEntry = await getEntry('data', 'data');
+if (!dataEntry) {
+  throw new Error('Could not find data');
+}
+
+const { data: entry } = dataEntry;
+
 const { data, description } = entry;
 ---
 
