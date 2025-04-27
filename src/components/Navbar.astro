@@ -2,16 +2,6 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<style>
-  nav > a {
-    @apply py-2 text-lg px-6 flex-1 text-center inline-block;
-  }
-
-  nav > a.active {
-    @apply border-b-2 border-b-blue-400 text-blue-400;
-  }
-</style>
-
 <script>
   const navbar = document.querySelector('nav');
 

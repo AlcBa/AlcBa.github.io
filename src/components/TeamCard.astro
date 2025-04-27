@@ -15,19 +15,12 @@ const { firstName, lastName, role, description, website, imageUrl } = Astro.prop
 const name = `${firstName} ${lastName ? lastName.toUpperCase() : ''}`.trim();
 ---
 
-<style>
-  img,
-  img::before {
-    @apply h-24 w-24 xs:h-32 xs:w-32 object-cover rounded-full border-2 border-gray-400/30;
-  }
-</style>
-
 <div
-  class="flex flex-row space-y-0 space-x-4 xs:flex-col xs:space-x-0 xs:space-y-2 md:flex-row md:space-y-0 md:space-x-4"
+  class="team flex flex-row space-y-0 space-x-4 xs:flex-col xs:space-x-0 xs:space-y-2 md:flex-row md:space-y-0 md:space-x-4"
 >
   <div class="shrink-0">
     <Image
-      class="bg-gray-400 animate-pulse-fast"
+      class="bg-gray-400 animate-pulse-fast size-24 xs:size-32 object-cover rounded-full border-2 border-gray-400/30"
       alt={name}
       src={imageUrl}
       onload='this.classList.remove("animate-pulse-fast")'

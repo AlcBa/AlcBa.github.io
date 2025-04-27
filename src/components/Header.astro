@@ -9,15 +9,6 @@ const images = Object.values(
 ).map((i) => i.default);
 ---
 
-<style>
-  .header-image {
-    @apply w-full h-[211px] absolute object-cover object-center opacity-0;
-  }
-
-  .header-image.active {
-    @apply opacity-40;
-  }
-</style>
 <script>
   let i = Number(sessionStorage['header']) || 0;
   const headerImages = document.getElementsByClassName('header-image');
