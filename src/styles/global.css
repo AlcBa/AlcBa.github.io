@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@config "../../tailwind.config.mjs";
+
+@theme {
+  --font-sans: 'Karla Variable', 'sans-serif';
+
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+  --color-currentColor: currentColor;
+  --color-gray-100: #212121;
+  --color-gray-200: #404040;
+  --color-gray-300: #808080;
+  --color-gray-400: #cccccc;
+  --color-gray-500: #fafafa;
+  --color-blue-100: #00103d;
+  --color-blue-200: #0a1a48;
+  --color-blue-300: #1d4ed8;
+  --color-blue-400: #8399d8;
+  --color-blue-500: #d0d9f0;
+
+  --breakpoint-xs: 475px;
+
+  --animate-pulse-fast: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@layer base {
+  body {
+    @apply font-light;
+  }
+
+  h1 {
+    @apply text-[2.875rem];
+  }
+
+  h2 {
+    @apply font-semibold text-xl;
+  }
+
+  h3 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .card {
+    @apply py-4 border-b last:border-none border-gray-400;
+  }
+
+  .link {
+    @apply text-blue-300 hover:underline hover:text-blue-400;
+  }
+
+  .btn {
+    @apply py-1 px-2 text-blue-300 transition-colors duration-200 border border-blue-300 rounded-md
+    hover:text-blue-400 hover:border-blue-400;
+  }
+}
+
+.header-image {
+  @apply w-full h-[211px] absolute object-cover object-center opacity-0;
+}
+
+.header-image.active {
+  @apply opacity-40;
+}
+
+nav > a {
+  @apply py-2 text-lg px-6 flex-1 text-center inline-block;
+}
+
+nav > a.active {
+  @apply border-b-2 border-b-blue-400 text-blue-400;
+}
+
+.social-bar {
+  svg {
+    @apply h-5 w-5 transition-colors duration-200 hover:fill-blue-300;
+  }
+}

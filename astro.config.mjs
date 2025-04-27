@@ -1,10 +1,12 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import rehypeExternalLinks from 'rehype-external-links';
+
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://bayuhao.org',
+
   markdown: {
     rehypePlugins: [
       [
@@ -16,9 +18,8 @@ export default defineConfig({
       ],
     ],
   },
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-  ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
