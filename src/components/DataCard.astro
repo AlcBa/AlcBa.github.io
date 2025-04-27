@@ -11,8 +11,8 @@ interface Props {
 const { title, description, link } = Astro.props;
 
 const renderer = {
-  link(href: string, title: string, text: string) {
-    return `<a class='link' href=${href} target="_blank">${text}</a>`;
+  link(href: string, title: string | null | undefined, text: string) {
+    return `<a class='link' href="${href}" target="_blank">${text}</a>`;
   },
 };
 marked.use({ renderer });
