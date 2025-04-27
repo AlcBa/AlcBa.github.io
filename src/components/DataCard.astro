@@ -1,6 +1,7 @@
 ---
 import * as marked from 'marked';
 import sanitizeHtml from 'sanitize-html';
+import type { Tokens } from 'marked';
 
 interface Props {
   title: string;
@@ -11,11 +12,14 @@ interface Props {
 const { title, description, link } = Astro.props;
 
 const renderer = {
-  link(href: string, title: string | null | undefined, text: string) {
-    return `<a class='link' href="${href}" target="_blank">${text}</a>`;
+  link(token: Tokens.Link): string {
+    const { href, title, text } = token;
+    return `<a class="link" href="${href}" title="${title ?? text}" target="_blank">${text}</a>`;
   },
 };
+
 marked.use({ renderer });
+
 const parsedDescription = await marked.parse(description);
 const sanitisedDescription = sanitizeHtml(parsedDescription, {
   allowedAttributes: {
