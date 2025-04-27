@@ -18,14 +18,8 @@ const { data: team } = teamEntry;
 const { data: alumni } = alumniEntry;
 ---
 
-<style>
-  .team-container {
-    @apply grid grid-cols-1 xs:grid-cols-2 gap-y-10 gap-x-3;
-  }
-</style>
-
 <PageLayout title="Team">
-  <div class="team-container pt-4 xs:pt-8">
+  <div class="grid grid-cols-1 xs:grid-cols-2 gap-y-10 gap-x-3 pt-4 xs:pt-8">
     {team.length === 0 && <p>No team found.</p>}
     {
       team
@@ -43,7 +37,7 @@ const { data: alumni } = alumniEntry;
     }
   </div>
   <h2 class="mt-12 mb-4">Alumni</h2>
-  <div class="team-container">
+  <div class="grid grid-cols-1 xs:grid-cols-2 gap-y-10 gap-x-3">
     {alumni.length === 0 && <p>No alumni found.</p>}
     {
       alumni
