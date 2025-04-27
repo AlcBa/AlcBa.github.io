@@ -19,7 +19,7 @@
     "@tailwindcss/vite": "^4.1.4",
     "astro": "5.7.5",
     "autoprefixer": "^10.4.15",
-    "marked": "^9.1.0",
+    "marked": "^12.0.2",
     "postcss": "^8.4.28",
     "rehype-external-links": "^3.0.0",
     "sanitize-html": "^2.16.0",
