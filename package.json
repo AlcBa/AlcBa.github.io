@@ -14,10 +14,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.0.0",
-    "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/mdx": "4.2.5",
+    "@astrojs/tailwind": "6.0.2",
     "@fontsource-variable/karla": "^5.0.13",
-    "astro": "^3.2.0",
+    "astro": "5.7.5",
     "autoprefixer": "^10.4.15",
     "marked": "^9.1.0",
     "postcss": "^8.4.28",

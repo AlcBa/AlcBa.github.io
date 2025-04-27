@@ -1,7 +1,8 @@
 import { defineCollection, type ImageFunction, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const homeCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/home' }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -14,7 +15,7 @@ const homeCollection = defineCollection({
 });
 
 const socialCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/social' }),
   schema: z.object({
     googleScholar: z
       .string()
@@ -44,7 +45,7 @@ const researchSchema = z.object({
 });
 
 const researchCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/research' }),
   schema: z.array(researchSchema),
 });
 
@@ -66,7 +67,7 @@ const dataSchema = z.object({
 });
 
 const dataCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/data' }),
   schema: z.object({
     description: z.string(),
     data: z.array(dataSchema),
@@ -84,12 +85,12 @@ const teamSchema = (image: ImageFunction) =>
   });
 
 const teamCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/team' }),
   schema: ({ image }) => z.array(teamSchema(image)),
 });
 
 const cvCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/cv' }),
   schema: z.object({
     pdfUrl: z.string(),
   }),
