@@ -1,4 +1,5 @@
 ---
+import karlaWoff2 from '@fontsource-variable/karla/files/karla-latin-wght-normal.woff2?url';
 import '../components/GlobalStyles.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_NAME } from '../consts';
@@ -26,13 +27,7 @@ const SITE_DESCRIPTION = `${data.role} at ${data.faculty}, ${data.school}`;
     <meta name="twitter:title" content={SITE_NAME} />
     <meta name="twitter:description" content={SITE_DESCRIPTION} />
     <meta name="twitter:image" content="/favicon192.png" />
-    <link
-      rel="preload"
-      href="/_astro/karla-latin-wght-normal.fb90c9d9.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
+    <link rel="preload" href={karlaWoff2} as="font" type="font/woff2" crossorigin="anonymous" />
     <title>{title} | {SITE_NAME}</title>
   </head>
   <body class="bg-gray-500 text-gray-100">
