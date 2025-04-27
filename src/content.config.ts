@@ -2,7 +2,7 @@ import { defineCollection, type ImageFunction, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const homeCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/home' }),
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/home' }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),

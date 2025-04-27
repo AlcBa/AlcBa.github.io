@@ -4,7 +4,15 @@ import '../components/GlobalStyles.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_NAME } from '../consts';
 import { getEntry } from 'astro:content';
-const { data } = await getEntry('home', 'home');
+
+const entry = await getEntry('home', 'home');
+
+if (!entry) {
+  throw new Error('Could not find home');
+}
+
+const { data } = entry;
+
 import Header from '../components/Header.astro';
 const { title } = Astro.props;
 const currentPath = Astro.url.pathname;
