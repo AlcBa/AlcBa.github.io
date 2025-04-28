@@ -13,6 +13,6 @@ const { data: courses } = entry;
 
 <PageLayout title="Teaching">
   <div class="px-0 md:px-6">
-    {courses.map((c) => <CourseCard title={c.title} school={c.school} description={c.description} />)}
+    {courses.map((c) => <CourseCard type={c.type} year={c.year} title={c.title} school={c.school} />)}
   </div>
 </PageLayout>

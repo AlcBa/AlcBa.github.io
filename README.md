@@ -58,11 +58,12 @@ The information on the teaching page can be updated using the JSON file found in
 
 The format is as follows:
 
-| Key         | Value                                     |
-| ----------- | ----------------------------------------- |
-| title       | The title of course                       |
-| school      | The school where the course was taught at |
-| description | A description for the course              |
+| Key    | Value                                                                                      |
+| ------ | ------------------------------------------------------------------------------------------ |
+| title  | The title of course                                                                        |
+| school | The school where the course was taught at                                                  |
+| type   | A description for type of the course                                                       |
+| year   | The year the course was taught for, in an array e.g. `[2022, 2023]`. Automatically sorted. |
 
 ### Data page
 

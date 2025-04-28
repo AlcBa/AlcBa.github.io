@@ -52,7 +52,8 @@ const researchCollection = defineCollection({
 const teachingSchema = z.object({
   title: z.string(),
   school: z.string(),
-  description: z.string(),
+  type: z.string(),
+  year: z.array(z.number()),
 });
 
 const teachingCollection = defineCollection({
