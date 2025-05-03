@@ -11,8 +11,8 @@ const name = `${firstName} ${lastName ? lastName.toUpperCase() : ''}`.trim();
 ---
 
 <div>
-  <h4>{name}</h4>
-  {description && <p class="text-gray-300 text-sm italic -mt-1">{description}</p>}
+  <h4 class="leading-6">{name}</h4>
+  {description && <p class="text-gray-300 text-sm italic -mt-0.5 leading-4">{description}</p>}
   {
     website && (
       <a class="link text-sm" href={website}>
