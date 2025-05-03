@@ -39,14 +39,16 @@ const { data: teachingAssistants } = teachingAssistantsEntry;
         <>
           <h3 class="text-gray-200 mt-5 mb-1">Teaching Assistants</h3>
           <div class:list={['grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3']}>
-            {teachingAssistants.map((teacher) => (
-              <AcknowledgmentCard
-                firstName={teacher.firstName}
-                lastName={teacher.lastName}
-                description={teacher.description}
-                website={teacher.website}
-              />
-            ))}
+            {teachingAssistants
+              .sort((a, b) => (a.firstName.toLowerCase() < b.firstName.toLowerCase() ? -1 : 1))
+              .map((teacher) => (
+                <AcknowledgmentCard
+                  firstName={teacher.firstName}
+                  lastName={teacher.lastName}
+                  description={teacher.description}
+                  website={teacher.website}
+                />
+              ))}
           </div>
         </>
       )
@@ -57,14 +59,16 @@ const { data: teachingAssistants } = teachingAssistantsEntry;
         <>
           <h3 class="mt-8 mb-1 text-gray-200">Guest Speakers</h3>
           <div class:list={['grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3']}>
-            {guestSpeakers.map((speaker) => (
-              <AcknowledgmentCard
-                firstName={speaker.firstName}
-                lastName={speaker.lastName}
-                description={speaker.description}
-                website={speaker.website}
-              />
-            ))}
+            {guestSpeakers
+              .sort((a, b) => (a.firstName.toLowerCase() < b.firstName.toLowerCase() ? -1 : 1))
+              .map((speaker) => (
+                <AcknowledgmentCard
+                  firstName={speaker.firstName}
+                  lastName={speaker.lastName}
+                  description={speaker.description}
+                  website={speaker.website}
+                />
+              ))}
           </div>
         </>
       )
