@@ -1,32 +1,49 @@
 [
   {
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "description": "National University of Singapore",
-    "website": "https://www.linkedin.com/in/janedoe/"
+    "firstName": "Anindya",
+    "lastName": "UPADHYAY",
+    "description": "LKYSPP, NUS",
+    "website": "https://www.linkedin.com/in/anindya-upadhyay/"
   },
   {
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "description": "National University of Singapore",
-    "website": "https://www.linkedin.com/in/janedoe/"
+    "firstName": "Bima",
+    "lastName": "Satria",
+    "description": "LKYSPP, NUS",
+    "website": "https://www.linkedin.com/in/bima-id/?originalSubdomain=id"
   },
   {
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "description": "National University of Singapore",
-    "website": "https://www.linkedin.com/in/janedoe/"
+    "firstName": "Haoyi",
+    "lastName": "Tan",
+    "description": "LKYSPP, NUS"
   },
   {
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "description": "National University of Singapore",
-    "website": "https://www.linkedin.com/in/janedoe/"
+    "firstName": "Hui Bing Priscilla",
+    "lastName": "Yip",
+    "description": "LKYSPP, NUS",
+    "website": "https://www.linkedin.com/in/priscilla-yip/"
   },
   {
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "description": "National University of Singapore",
-    "website": "https://www.linkedin.com/in/janedoe/"
+    "firstName": "Liuyang",
+    "lastName": "He",
+    "description": "LKYSPP, NUS",
+    "website": "https://www.heliuyang.com/home"
+  },
+  {
+    "firstName": "Rui",
+    "lastName": "Wang",
+    "description": "LKYSPP, NUS",
+    "website": "https://www.linkedin.com/in/rui-wang-8808a3bb/?originalSubdomain=sg"
+  },
+  {
+    "firstName": "Salome Camille",
+    "lastName": "Blume",
+    "description": "LKYSPP, NUS",
+    "website": "https://www.linkedin.com/in/salomeblume/"
+  },
+  {
+    "firstName": "Vijeth",
+    "lastName": "ACHARYA",
+    "description": "LKYSPP, NUS",
+    "website": "https://www.linkedin.com/in/vijethacharya/?originalSubdomain=in"
   }
 ]
