@@ -54,7 +54,7 @@ The format is as follows:
 
 ### Teaching page
 
-The information on the teaching page can be updated using the JSON file found in `src/content/teaching/teaching.json`.
+The information for the courses on the teaching page can be updated using the JSON file found in `src/content/teaching/teaching.json`.
 
 The format is as follows:
 
@@ -64,6 +64,17 @@ The format is as follows:
 | school | The school where the course was taught at                                                  |
 | type   | A description for type of the course                                                       |
 | year   | The year the course was taught for, in an array e.g. `[2022, 2023]`. Automatically sorted. |
+
+The information for the acknowledgements on the teaching page can be updated using the JSON files found in `src/content/acknowledgements/guestspeakers.json` and `src/content/acknowledgements/teachingassistants.json`.
+
+The format is as follows:
+
+| Key                    | Value                                                             |
+| ---------------------- | ----------------------------------------------------------------- |
+| firstName              | The first name of the person.                                     |
+| lastName (optional)    | The last name of the person, and will be displayed in `ALL_CAPS`. |
+| description (optional) | A short description of the person.                                |
+| website (optional)     | The website of the person.                                        |
 
 ### Data page
 
