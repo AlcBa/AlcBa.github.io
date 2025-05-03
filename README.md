@@ -54,9 +54,16 @@ The format is as follows:
 
 ### Teaching page
 
-The information on the teaching page can be updated using the JSON file found in `src/content/teaching/teaching.json`.
+The information for the courses and acknowledgement description on the teaching page can be updated using the JSON file found in `src/content/teaching/teaching.json`.
 
 The format is as follows:
+
+| Key                        | Value                                                           |
+| -------------------------- | --------------------------------------------------------------- |
+| acknowledgementDescription | A short description displayed under the acknowledgement section |
+| courses                    | The collection of courses displayed on the teaching page        |
+
+The format for each course is as follows:
 
 | Key    | Value                                                                                      |
 | ------ | ------------------------------------------------------------------------------------------ |
@@ -64,6 +71,17 @@ The format is as follows:
 | school | The school where the course was taught at                                                  |
 | type   | A description for type of the course                                                       |
 | year   | The year the course was taught for, in an array e.g. `[2022, 2023]`. Automatically sorted. |
+
+The information for the acknowledgements on the teaching page can be updated using the JSON files found in `src/content/acknowledgements/guestspeakers.json` and `src/content/acknowledgements/teachingassistants.json`. Each list is sorted according to the first name in alphabetical order (case-insensitive).
+
+The format is as follows:
+
+| Key                    | Value                                                             |
+| ---------------------- | ----------------------------------------------------------------- |
+| firstName              | The first name of the person.                                     |
+| lastName (optional)    | The last name of the person, and will be displayed in `ALL_CAPS`. |
+| description (optional) | A short description of the person.                                |
+| website (optional)     | The website of the person.                                        |
 
 ### Data page
 

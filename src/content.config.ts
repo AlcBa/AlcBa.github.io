@@ -57,8 +57,23 @@ const teachingSchema = z.object({
 });
 
 const teachingCollection = defineCollection({
-  type: 'data',
-  schema: z.array(teachingSchema),
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/teaching' }),
+  schema: z.object({
+    acknowledgementDescription: z.string().optional(),
+    courses: z.array(teachingSchema),
+  }),
+});
+
+const acknowledgementsSchema = z.object({
+  firstName: z.string(),
+  lastName: z.string().optional(),
+  description: z.string().optional(),
+  website: z.string().url().optional(),
+});
+
+const acknowledgementsCollection = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/acknowledgements' }),
+  schema: z.array(acknowledgementsSchema),
 });
 
 const dataSchema = z.object({
@@ -102,6 +117,7 @@ export const collections = {
   social: socialCollection,
   research: researchCollection,
   teaching: teachingCollection,
+  acknowledgements: acknowledgementsCollection,
   data: dataCollection,
   team: teamCollection,
   cv: cvCollection,

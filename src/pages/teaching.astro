@@ -3,16 +3,75 @@ import PageLayout from '../layouts/PageLayout.astro';
 
 import { getEntry } from 'astro:content';
 import CourseCard from '../components/CourseCard.astro';
+import AcknowledgmentCard from '../components/AcknowledgementCard.astro';
 
-const entry = await getEntry('teaching', 'teaching');
-if (!entry) {
+const teachingEntry = await getEntry('teaching', 'teaching');
+if (!teachingEntry) {
   throw new Error('Could not find teaching');
 }
-const { data: courses } = entry;
+const { data: teachingData } = teachingEntry;
+const { acknowledgementDescription, courses } = teachingData;
+
+const guestSpeakersEntry = await getEntry('acknowledgements', 'guestspeakers');
+if (!guestSpeakersEntry) {
+  throw new Error('Could not find guest speakers');
+}
+const { data: guestSpeakers } = guestSpeakersEntry;
+
+const teachingAssistantsEntry = await getEntry('acknowledgements', 'teachingassistants');
+if (!teachingAssistantsEntry) {
+  throw new Error('Could not find teaching assistants');
+}
+const { data: teachingAssistants } = teachingAssistantsEntry;
 ---
 
 <PageLayout title="Teaching">
   <div class="px-0 md:px-6">
+    <h2 class="mb-4">Courses</h2>
     {courses.map((c) => <CourseCard type={c.type} year={c.year} title={c.title} school={c.school} />)}
+  </div>
+  <div class="px-0 md:px-6">
+    <h2 class="mt-12 mb-2">Acknowledgements</h2>
+    {acknowledgementDescription && <p>{acknowledgementDescription}</p>}
+
+    {
+      teachingAssistants.length > 0 && (
+        <>
+          <h3 class="text-gray-200 mt-5 mb-1">Teaching Assistants</h3>
+          <div class:list={['grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3']}>
+            {teachingAssistants
+              .sort((a, b) => (a.firstName.toLowerCase() < b.firstName.toLowerCase() ? -1 : 1))
+              .map((teacher) => (
+                <AcknowledgmentCard
+                  firstName={teacher.firstName}
+                  lastName={teacher.lastName}
+                  description={teacher.description}
+                  website={teacher.website}
+                />
+              ))}
+          </div>
+        </>
+      )
+    }
+
+    {
+      guestSpeakers.length > 0 && (
+        <>
+          <h3 class="mt-8 mb-1 text-gray-200">Guest Speakers</h3>
+          <div class:list={['grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3']}>
+            {guestSpeakers
+              .sort((a, b) => (a.firstName.toLowerCase() < b.firstName.toLowerCase() ? -1 : 1))
+              .map((speaker) => (
+                <AcknowledgmentCard
+                  firstName={speaker.firstName}
+                  lastName={speaker.lastName}
+                  description={speaker.description}
+                  website={speaker.website}
+                />
+              ))}
+          </div>
+        </>
+      )
+    }
   </div>
 </PageLayout>
