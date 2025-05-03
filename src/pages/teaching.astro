@@ -5,11 +5,12 @@ import { getEntry } from 'astro:content';
 import CourseCard from '../components/CourseCard.astro';
 import AcknowledgmentCard from '../components/AcknowledgementCard.astro';
 
-const coursesEntry = await getEntry('teaching', 'teaching');
-if (!coursesEntry) {
+const teachingEntry = await getEntry('teaching', 'teaching');
+if (!teachingEntry) {
   throw new Error('Could not find teaching');
 }
-const { data: courses } = coursesEntry;
+const { data: teachingData } = teachingEntry;
+const { acknowledgementDescription, courses } = teachingData;
 
 const guestSpeakersEntry = await getEntry('acknowledgements', 'guestspeakers');
 if (!guestSpeakersEntry) {
@@ -30,8 +31,9 @@ const { data: teachingAssistants } = teachingAssistantsEntry;
     {courses.map((c) => <CourseCard type={c.type} year={c.year} title={c.title} school={c.school} />)}
   </div>
   <div class="px-0 md:px-6">
-    <h2 class="mt-12 mb-4">Acknowledgements</h2>
-    <h3 class="text-gray-200 mb-2">Teaching Assistants</h3>
+    <h2 class="mt-12 mb-2">Acknowledgements</h2>
+    {acknowledgementDescription && <p>{acknowledgementDescription}</p>}
+    <h3 class="text-gray-200 mt-5 mb-1">Teaching Assistants</h3>
     <div class:list={['grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3']}>
       {
         teachingAssistants.map((teacher) => (
@@ -45,7 +47,7 @@ const { data: teachingAssistants } = teachingAssistantsEntry;
       }
     </div>
 
-    <h3 class="mt-8 mb-2 text-gray-200">Guest Speakers</h3>
+    <h3 class="mt-8 mb-1 text-gray-200">Guest Speakers</h3>
     <div class:list={['grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3']}>
       {
         guestSpeakers.map((speaker) => (

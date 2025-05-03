@@ -54,9 +54,16 @@ The format is as follows:
 
 ### Teaching page
 
-The information for the courses on the teaching page can be updated using the JSON file found in `src/content/teaching/teaching.json`.
+The information for the courses and acknowledgement description on the teaching page can be updated using the JSON file found in `src/content/teaching/teaching.json`.
 
 The format is as follows:
+
+| Key                        | Value                                                           |
+| -------------------------- | --------------------------------------------------------------- |
+| acknowledgementDescription | A short description displayed under the acknowledgement section |
+| courses                    | The collection of courses displayed on the teaching page        |
+
+The format for each course is as follows:
 
 | Key    | Value                                                                                      |
 | ------ | ------------------------------------------------------------------------------------------ |

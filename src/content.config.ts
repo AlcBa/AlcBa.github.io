@@ -57,8 +57,11 @@ const teachingSchema = z.object({
 });
 
 const teachingCollection = defineCollection({
-  type: 'data',
-  schema: z.array(teachingSchema),
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/teaching' }),
+  schema: z.object({
+    acknowledgementDescription: z.string().optional(),
+    courses: z.array(teachingSchema),
+  }),
 });
 
 const acknowledgementsSchema = z.object({
