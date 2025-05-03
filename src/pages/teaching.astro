@@ -16,6 +16,12 @@ if (!guestSpeakersEntry) {
   throw new Error('Could not find guest speakers');
 }
 const { data: guestSpeakers } = guestSpeakersEntry;
+
+const teachingAssistantsEntry = await getEntry('acknowledgements', 'teachingassistants');
+if (!teachingAssistantsEntry) {
+  throw new Error('Could not find teaching assistants');
+}
+const { data: teachingAssistants } = teachingAssistantsEntry;
 ---
 
 <PageLayout title="Teaching">
@@ -25,7 +31,21 @@ const { data: guestSpeakers } = guestSpeakersEntry;
   </div>
   <div class="px-0 md:px-6">
     <h2 class="mt-12 mb-4">Acknowledgements</h2>
-    <h3>Guest Speakers</h3>
+    <h3 class="text-gray-200 mb-2">Teaching Assistants</h3>
+    <div class:list={['grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3']}>
+      {
+        teachingAssistants.map((teacher) => (
+          <AcknowledgmentCard
+            firstName={teacher.firstName}
+            lastName={teacher.lastName}
+            description={teacher.description}
+            website={teacher.website}
+          />
+        ))
+      }
+    </div>
+
+    <h3 class="mt-8 mb-2 text-gray-200">Guest Speakers</h3>
     <div class:list={['grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3']}>
       {
         guestSpeakers.map((speaker) => (
