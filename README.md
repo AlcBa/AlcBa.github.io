@@ -72,7 +72,7 @@ The format for each course is as follows:
 | type   | A description for type of the course                                                       |
 | year   | The year the course was taught for, in an array e.g. `[2022, 2023]`. Automatically sorted. |
 
-The information for the acknowledgements on the teaching page can be updated using the JSON files found in `src/content/acknowledgements/guestspeakers.json` and `src/content/acknowledgements/teachingassistants.json`.
+The information for the acknowledgements on the teaching page can be updated using the JSON files found in `src/content/acknowledgements/guestspeakers.json` and `src/content/acknowledgements/teachingassistants.json`. Each list is sorted according to the first name in alphabetical order (case-insensitive).
 
 The format is as follows:
 
