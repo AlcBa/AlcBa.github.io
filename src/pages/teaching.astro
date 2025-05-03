@@ -26,15 +26,17 @@ const { data: guestSpeakers } = guestSpeakersEntry;
   <div class="px-0 md:px-6">
     <h2 class="mt-12 mb-4">Acknowledgements</h2>
     <h3>Guest Speakers</h3>
-    {
-      guestSpeakers.map((speaker) => (
-        <AcknowledgmentCard
-          firstName={speaker.firstName}
-          lastName={speaker.lastName}
-          description={speaker.description}
-          website={speaker.website}
-        />
-      ))
-    }
+    <div class:list={['grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3']}>
+      {
+        guestSpeakers.map((speaker) => (
+          <AcknowledgmentCard
+            firstName={speaker.firstName}
+            lastName={speaker.lastName}
+            description={speaker.description}
+            website={speaker.website}
+          />
+        ))
+      }
+    </div>
   </div>
 </PageLayout>
