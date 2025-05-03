@@ -1,32 +1,72 @@
 [
   {
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "description": "National University of Singapore",
-    "website": "https://www.linkedin.com/in/janedoe/"
+    "firstName": "Alvin",
+    "lastName": "Yeo",
+    "description": "Singapore Food Agency",
+    "website": "https://www.linkedin.com/in/alvinyeo22/?originalSubdomain=sg"
   },
   {
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "description": "National University of Singapore",
-    "website": "https://www.linkedin.com/in/janedoe/"
+    "firstName": "Angel",
+    "lastName": "Hsu",
+    "description": "University of North Carolina at Chapel Hill",
+    "website": "https://datadrivenlab.org/team"
   },
   {
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "description": "National University of Singapore",
-    "website": "https://www.linkedin.com/in/janedoe/"
+    "firstName": "Haohan",
+    "lastName": "Chen",
+    "description": "The University of Hong Kong",
+    "website": "https://haohanchen.github.io/"
   },
   {
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "description": "National University of Singapore",
-    "website": "https://www.linkedin.com/in/janedoe/"
+    "firstName": "Ivan",
+    "lastName": "Yeo",
+    "description": "Ministry of Information, Communications and the Arts",
+    "website": "https://www.linkedin.com/in/ivan-yeo-5b739566/?originalSubdomain=sg"
   },
   {
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "description": "National University of Singapore",
-    "website": "https://www.linkedin.com/in/janedoe/"
+    "firstName": "James Ji",
+    "lastName": "Zhang",
+    "description": "Arboretica",
+    "website": "https://www.arboretica.com/about/james-zhang/"
+  },
+  {
+    "firstName": "Ji",
+    "lastName": "Ma",
+    "description": "University of Texas at Austin",
+    "website": "https://jima.me/"
+  },
+  {
+    "firstName": "Joseph",
+    "lastName": "Teo",
+    "description": "Ministry of Sustainability and the Environment"
+  },
+  {
+    "firstName": "Kenneth",
+    "lastName": "Benoit",
+    "description": "Singapore Management University",
+    "website": "https://kenbenoit.net"
+  },
+  {
+    "firstName": "Kok Hoe",
+    "lastName": "Ng",
+    "description": "LKYSPP, NUS",
+    "website": "https://lkyspp.nus.edu.sg/our-people/faculty/ng-kok-hoe"
+  },
+  {
+    "firstName": "Martin",
+    "lastName": "Chuang",
+    "description": "SOC, NUS",
+    "website": "https://www.linkedin.com/in/martin-chuang/?originalSubdomain=sg"
+  },
+  {
+    "firstName": "Weijie",
+    "lastName": "Zhang",
+    "description": "Ministry of Sustainability and the Environment",
+    "website": "https://www.linkedin.com/in/zhangweijie-sg/?originalSubdomain=sg"
+  },
+  {
+    "firstName": "Weixiang",
+    "lastName": "Wang",
+    "description": "Ministry of Sustainability and the Environment"
   }
 ]
