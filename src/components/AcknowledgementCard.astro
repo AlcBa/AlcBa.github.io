@@ -1,0 +1,17 @@
+---
+interface Props {
+  firstName: string;
+  lastName?: string;
+  description?: string;
+  website?: string;
+}
+
+const { firstName, lastName, description, website } = Astro.props;
+const name = `${firstName} ${lastName ? lastName.toUpperCase() : ''}`.trim();
+---
+
+<div>
+  <h4>{name}</h4>
+  {description && <p>{description}</p>}
+  {website && <a href={website}>Website</a>}
+</div>
