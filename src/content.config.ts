@@ -68,7 +68,6 @@ const acknowledgementsSchema = z.object({
   firstName: z.string(),
   lastName: z.string().optional(),
   description: z.string().optional(),
-  website: z.string().url().optional(),
 });
 
 const acknowledgementsCollection = defineCollection({

@@ -3,21 +3,13 @@ interface Props {
   firstName: string;
   lastName?: string;
   description?: string;
-  website?: string;
 }
 
-const { firstName, lastName, description, website } = Astro.props;
+const { firstName, lastName, description } = Astro.props;
 const name = `${firstName} ${lastName ? lastName.toUpperCase() : ''}`.trim();
 ---
 
 <div>
   <h4 class="leading-6">{name}</h4>
   {description && <p class="text-gray-300 text-sm italic -mt-0.5 leading-4">{description}</p>}
-  {
-    website && (
-      <a class="link text-sm" href={website}>
-        Website
-      </a>
-    )
-  }
 </div>

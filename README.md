@@ -81,7 +81,6 @@ The format is as follows:
 | firstName              | The first name of the person.                                     |
 | lastName (optional)    | The last name of the person, and will be displayed in `ALL_CAPS`. |
 | description (optional) | A short description of the person.                                |
-| website (optional)     | The website of the person.                                        |
 
 ### Data page
 
