@@ -15,22 +15,18 @@ const { firstName, lastName, role, description, website, imageUrl } = Astro.prop
 const name = `${firstName} ${lastName ? lastName.toUpperCase() : ''}`.trim();
 ---
 
-<div
-  class="team flex flex-row space-y-0 space-x-4 xs:flex-col xs:space-x-0 xs:space-y-2 md:flex-row md:space-y-0 md:space-x-4"
->
-  <div class="shrink-0">
-    <Image
-      class="bg-gray-400 animate-pulse-fast size-24 xs:size-32 object-cover rounded-full border-2 border-gray-400/30"
-      alt={name}
-      src={imageUrl}
-      onload='this.classList.remove("animate-pulse-fast")'
-      format="jpg"
-    />
-  </div>
-  <div>
+<div class="team flex flex-row space-y-0 space-x-4 xs:w-36 xs:flex-col xs:space-x-0 xs:space-y-2 md:space-x-4">
+  <Image
+    class="bg-gray-400 shrink-0 xs:mx-auto animate-pulse-fast size-24 xs:size-32 object-cover rounded-full border-2 border-gray-400/30"
+    alt={name}
+    src={imageUrl}
+    onload='this.classList.remove("animate-pulse-fast")'
+    format="jpg"
+  />
+  <div class="text-left xs:text-center">
     <h3>{name}</h3>
     <p class="text-sm text-gray-300">{role}</p>
-    <p class="my-3">{description}</p>
+    <p class="my-2.5 leading-5">{description}</p>
     {
       website && (
         <a class="btn text-xs" href={website} target="_blank" rel="noreferrer noopener">
