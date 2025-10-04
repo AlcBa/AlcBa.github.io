@@ -1,21 +1,5 @@
 [
   {
-    "firstName": "Yuxi",
-    "lastName": "Ba",
-    "role": "Research Assistant",
-    "description": "NUS Economics",
-    "website": "https://www.linkedin.com/in/yuxi-ba-abby/",
-    "imageUrl": "./ba-yu-xi.jpg"
-  },
-  {
-    "firstName": "Yinfeng",
-    "lastName": "Liang",
-    "role": "Visiting Student",
-    "description": "Peking University",
-    "website": "http://www.linkedin.com/in/yinfeng-liang-112589322/",
-    "imageUrl": "./liang-yin-feng.jpg"
-  },
-  {
     "firstName": "Yuan",
     "lastName": "Qiu",
     "role": "PhD Student",
@@ -29,6 +13,6 @@
     "role": "Research Assistant",
     "description": "NUS Faculty of Science",
     "website": "https://www.linkedin.com/in/zhengfangnan/",
-    "imageUrl": "./wang-shan-yue.jpg"
+    "imageUrl": "./FangnanZ.png"
   }
 ]
