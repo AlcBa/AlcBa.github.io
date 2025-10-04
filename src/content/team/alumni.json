@@ -16,6 +16,38 @@
     "imageUrl": "./lee-zi-jie.jpg"
   },
   {
+    "firstName": "Yuxi",
+    "lastName": "Ba",
+    "role": "Alumni",
+    "description": "NUS Economics",
+    "website": "https://www.linkedin.com/in/yuxi-ba-abby/",
+    "imageUrl": "./ba-yu-xi.jpg"
+  },
+  {
+    "firstName": "Yinfeng",
+    "lastName": "Liang",
+    "role": "Alumni",
+    "description": "Peking University",
+    "website": "http://www.linkedin.com/in/yinfeng-liang-112589322/",
+    "imageUrl": "./liang-yin-feng.jpg"
+  },
+  {
+    "firstName": "Xueqi",
+    "lastName": "Bai",
+    "role": "Alumni",
+    "description": "University of Chicago",
+    "website": "http://www.linkedin.com/in/xueqi-bai-316517221/",
+    "imageUrl": "./bai-xue-qi1.jpg"
+  },
+  {
+    "firstName": "Shanyue",
+    "lastName": "Wang",
+    "role": "Research Assistant",
+    "description": "Cornell University",
+    "website": "https://www.linkedin.com/in/shanyue-wang-3185a3291/",
+    "imageUrl": "./wang-shan-yue.jpg"
+  },
+  {
     "firstName": "Kristiyanto",
     "role": "Alumni",
     "description": "Google Indonesia",
