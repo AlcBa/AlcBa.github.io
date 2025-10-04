@@ -16,19 +16,19 @@
     "imageUrl": "./liang-yin-feng.jpg"
   },
   {
-    "firstName": "Xueqi",
-    "lastName": "Bai",
-    "role": "Research Assistant",
-    "description": "NUS Economics",
-    "website": "http://www.linkedin.com/in/xueqi-bai-316517221/",
-    "imageUrl": "./bai-xue-qi1.jpg"
+    "firstName": "Yuan",
+    "lastName": "Qiu",
+    "role": "PhD Student",
+    "description": "LKYSPP",
+    "website": "https://www.linkedin.com/in/yuan-qiu-b3191525b/",
+    "imageUrl": "./Qiuyuan.jpg"
   },
   {
-    "firstName": "Shanyue",
-    "lastName": "Wang",
+    "firstName": "Fangnan",
+    "lastName": "Zheng",
     "role": "Research Assistant",
-    "description": "Cornell University",
-    "website": "https://www.linkedin.com/in/shanyue-wang-3185a3291/",
+    "description": "NUS Faculty of Science",
+    "website": "https://www.linkedin.com/in/zhengfangnan/",
     "imageUrl": "./wang-shan-yue.jpg"
   }
 ]
