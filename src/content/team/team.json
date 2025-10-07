@@ -1,5 +1,13 @@
 [
   {
+    "firstName": "Mohnish",
+    "lastName": "Kedia",
+    "role": "PhD Student",
+    "description": "LKYSPP",
+    "website": "https://mohnishkedia.weebly.com/",
+    "imageUrl": "./Mohnish.jpg"
+  },
+  {
     "firstName": "Yuheng",
     "lastName": "Lin",
     "role": "Research Assistant",
@@ -22,5 +30,13 @@
     "description": "NUS Faculty of Science",
     "website": "https://www.linkedin.com/in/zhengfangnan/",
     "imageUrl": "./FangnanZ.png"
+  },
+  {
+    "firstName": "Wahyu",
+    "lastName": "Zuli Firmanto",
+    "role": "Research Assistant",
+    "description": "LKYSPP",
+    "website": "https://wahyuzfirmanto.com/",
+    "imageUrl": "./Wahyu.jpg"
   }
 ]
