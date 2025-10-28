@@ -50,6 +50,11 @@
     "description": "SOC, NUS"
   },
   {
+    "firstName": "Wei",
+    "lastName": "Luo",
+    "description": "Geography, NUS"
+  },
+  {
     "firstName": "Weijie",
     "lastName": "Zhang",
     "description": "Ministry of Sustainability and the Environment"
@@ -58,5 +63,10 @@
     "firstName": "Weixiang",
     "lastName": "Wang",
     "description": "Ministry of Sustainability and the Environment"
+  },
+  {
+    "firstName": "Ziteng",
+    "lastName": "Fan",
+    "description": "Fudan University"
   }
 ]
