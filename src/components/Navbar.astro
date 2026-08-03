@@ -16,7 +16,7 @@ const currentPath = Astro.url.pathname;
   }
 </script>
 
-<nav class="flex mx-auto max-w-4xl justify-start overflow-x-scroll">
+<nav class="scrollbar-none flex mx-auto max-w-4xl justify-start overflow-x-auto">
   <a class={currentPath === '/' ? 'active' : ''} href="/">Home</a>
   <a class={/\/research(\/)?/.test(currentPath) ? 'active' : ''} href="/research/">Research</a>
   <a class={/\/teaching(\/)?/.test(currentPath) ? 'active' : ''} href="/teaching/">Teaching</a>
