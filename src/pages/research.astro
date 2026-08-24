@@ -1,11 +1,17 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import GrantCard from '../components/GrantCard.astro';
 import ResearchCard from '../components/ResearchCard.astro';
 
 import { getEntry } from 'astro:content';
 
+const grantsEntry = await getEntry('grants', 'grants');
 const publicationsEntry = await getEntry('research', 'publications');
 const workingPapersEntry = await getEntry('research', 'workingpapers');
+
+if (!grantsEntry) {
+  throw new Error('Could not find grants');
+}
 
 if (!publicationsEntry) {
   throw new Error('Could not find publications');
@@ -15,28 +21,297 @@ if (!workingPapersEntry) {
   throw new Error('Could not find working papers');
 }
 
+const { data: grants } = grantsEntry;
 const { data: publications } = publicationsEntry;
 const { data: workingpapers } = workingPapersEntry;
+const EARLIER_PUBLICATIONS_CUTOFF = 2021;
+
+const publicationsWithYear = publications.map((publication) => {
+  const { year } = publication;
+
+  if (year === undefined) {
+    throw new Error(`Publication year is missing for "${publication.title}"`);
+  }
+
+  return { ...publication, year };
+});
+
+const recentPublicationYears = [
+  ...new Set(publicationsWithYear.filter(({ year }) => year > EARLIER_PUBLICATIONS_CUTOFF).map(({ year }) => year)),
+].sort((a, b) => b - a);
+
+const earlierPublications = publicationsWithYear
+  .filter(({ year }) => year <= EARLIER_PUBLICATIONS_CUTOFF)
+  .sort((a, b) => b.year - a.year);
+
+const publicationGroups = [
+  ...recentPublicationYears.map((year) => ({
+    id: `publications-${year}`,
+    label: String(year),
+    papers: publicationsWithYear.filter((publication) => publication.year === year),
+  })),
+  ...(earlierPublications.length > 0
+    ? [
+        {
+          id: 'publications-2021-and-earlier',
+          label: '2021 and earlier',
+          papers: earlierPublications,
+        },
+      ]
+    : []),
+];
+
+const scrollspyItems = [
+  { id: 'grants', label: 'Grants', level: 2 },
+  { id: 'working-papers', label: 'Working Papers', level: 2 },
+  { id: 'publications', label: 'Publications', level: 2 },
+  ...publicationGroups.map(({ id, label }) => ({ id, label, level: 3 })),
+];
 ---
 
-<PageLayout title="Research">
-  <div>
-    <h2 class="mb-4">Publications</h2>
-    {publications.length === 0 && <p>No publications currently.</p>}
-    {
-      publications.map((p) => (
-        <ResearchCard title={p.title} publication={p.publication} authors={p.authors} pdfUrl={p.pdfUrl} doi={p.doi} />
-      ))
-    }
-  </div>
+<PageLayout title="Research" className="max-w-none! px-0!">
+  <div
+    class="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(12rem,1fr)_minmax(0,56rem)_minmax(12rem,1fr)] lg:items-start"
+  >
+    <aside
+      class="hidden lg:sticky lg:top-8 lg:col-start-1 lg:row-start-1 lg:ml-6 lg:block lg:w-[calc(100%-2.5rem)] lg:max-w-44 lg:text-base"
+      aria-label="Research sections"
+    >
+      <nav>
+        <ul class="list-none">
+          {
+            scrollspyItems.map((item, index) => (
+              <li
+                class:list={[
+                  item.level === 2 && index > 0 && 'mt-[0.45rem]',
+                  item.level === 3 && 'ml-1 border-l border-gray-400 py-1 pl-3',
+                ]}
+              >
+                <a
+                  class="block text-gray-200 transition-colors duration-150 hover:text-blue-300 aria-[current=location]:font-semibold aria-[current=location]:text-blue-300"
+                  data-scrollspy-link
+                  data-scrollspy-target={item.id}
+                  href={`#${item.id}`}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </aside>
 
-  <div>
-    <h2 class="mt-12 mb-4">Working Papers</h2>
-    {workingpapers.length === 0 && <p>No working papers currently.</p>}
-    {
-      workingpapers.map((p) => (
-        <ResearchCard title={p.title} publication={p.publication} authors={p.authors} pdfUrl={p.pdfUrl} doi={p.doi} />
-      ))
-    }
+    <nav
+      class="invisible fixed inset-x-0 top-0 z-20 -translate-y-full border-y border-gray-400 bg-gray-500 opacity-0 transition-[transform,opacity,visibility] duration-200 data-[visible=true]:visible data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 lg:hidden"
+      aria-hidden="true"
+      aria-label="Research sections"
+      data-mobile-scrollspy-bar
+    >
+      <details class="group relative mx-auto max-w-4xl" data-mobile-scrollspy>
+        <summary
+          class="grid min-h-13 cursor-pointer list-none grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 px-6 [&::-webkit-details-marker]:hidden"
+        >
+          <span class="text-xs tracking-tight text-gray-300">/</span>
+          <span class="font-semibold" data-current-section>On this page</span>
+          <svg
+            class="w-4 transition-transform duration-150 group-open:rotate-180"
+            aria-hidden="true"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="m5 7.5 5 5 5-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"></path>
+          </svg>
+        </summary>
+        <ul
+          class="absolute inset-x-4 top-full list-none rounded-b-md border border-gray-400 bg-gray-500 py-2 shadow-[0_0.5rem_1rem_rgb(0_0_0/10%)]"
+        >
+          {
+            scrollspyItems.map((item) => (
+              <li class:list={[item.level === 3 && 'mx-4 border-l border-gray-400']}>
+                <a
+                  class="block px-4 py-[0.4rem] text-gray-200 transition-colors duration-150 hover:text-blue-300 aria-[current=location]:font-semibold aria-[current=location]:text-blue-300"
+                  data-scrollspy-link
+                  data-scrollspy-target={item.id}
+                  href={`#${item.id}`}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </details>
+    </nav>
+
+    <article class="mx-auto w-full max-w-4xl px-6 lg:col-start-2 lg:row-start-1">
+      <section aria-labelledby="grants">
+        <h2
+          id="grants"
+          class="mb-4 scroll-mt-20 lg:scroll-mt-8"
+          data-first-research-heading
+          data-scrollspy-mobile-label="Grants"
+        >
+          Grants
+        </h2>
+        {grants.length === 0 && <p>No grants currently.</p>}
+        {
+          grants.map((grant) => (
+            <GrantCard
+              title={grant.title}
+              grantor={grant.grantor}
+              amount={grant.amount}
+              year={grant.year}
+              investigators={grant.investigators}
+              url={grant.url}
+            />
+          ))
+        }
+      </section>
+
+      <section class="mt-12" aria-labelledby="working-papers">
+        <h2 id="working-papers" class="mb-4 scroll-mt-20 lg:scroll-mt-8" data-scrollspy-mobile-label="Working Papers">
+          Working Papers
+        </h2>
+        {workingpapers.length === 0 && <p>No working papers currently.</p>}
+        {
+          workingpapers.map((paper) => (
+            <ResearchCard
+              title={paper.title}
+              publication={paper.publication}
+              authors={paper.authors}
+              pdfUrl={paper.pdfUrl}
+              doi={paper.doi}
+            />
+          ))
+        }
+      </section>
+
+      <section class="mt-12" aria-labelledby="publications">
+        <h2 id="publications" class="mb-4 scroll-mt-20 lg:scroll-mt-8" data-scrollspy-mobile-label="Publications">
+          Publications
+        </h2>
+        {publications.length === 0 && <p>No publications currently.</p>}
+        {
+          publicationGroups.map((group, index) => (
+            <section class:list={[index > 0 && 'mt-9']} aria-labelledby={group.id}>
+              <h3
+                id={group.id}
+                class="mb-1 flex scroll-mt-20 items-center gap-3 font-normal italic lg:scroll-mt-8"
+                data-scrollspy-mobile-label={`Publications · ${group.label}`}
+              >
+                <span>{group.label}</span>
+                <span class="h-px flex-1 bg-gray-300" aria-hidden="true" />
+              </h3>
+              {group.papers.map((paper) => (
+                <ResearchCard
+                  title={paper.title}
+                  publication={paper.publication}
+                  year={paper.year}
+                  authors={paper.authors}
+                  pdfUrl={paper.pdfUrl}
+                  doi={paper.doi}
+                />
+              ))}
+            </section>
+          ))
+        }
+      </section>
+    </article>
   </div>
 </PageLayout>
+
+<script>
+  const scrollspyLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-scrollspy-link]'));
+  const currentSection = document.querySelector<HTMLElement>('[data-current-section]');
+  const defaultCurrentSection = currentSection?.textContent?.trim() ?? '';
+  const mobileScrollspy = document.querySelector<HTMLDetailsElement>('[data-mobile-scrollspy]');
+  const mobileScrollspyBar = document.querySelector<HTMLElement>('[data-mobile-scrollspy-bar]');
+  const firstResearchHeading = document.querySelector<HTMLElement>('[data-first-research-heading]');
+  const headingIds = [...new Set(scrollspyLinks.map((link) => link.dataset.scrollspyTarget))].filter(
+    (id): id is string => Boolean(id),
+  );
+  const headings = headingIds
+    .map((id) => document.getElementById(id))
+    .filter((heading): heading is HTMLElement => Boolean(heading));
+
+  let activeHeadingId = '';
+  let scrollFrame: number | undefined;
+
+  function setActiveHeading(heading?: HTMLElement) {
+    const nextHeadingId = heading?.id ?? '';
+    if (nextHeadingId === activeHeadingId) return;
+
+    activeHeadingId = nextHeadingId;
+    scrollspyLinks.forEach((link) => {
+      if (link.dataset.scrollspyTarget === activeHeadingId) {
+        link.setAttribute('aria-current', 'location');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+
+    if (currentSection) {
+      currentSection.textContent =
+        heading?.dataset.scrollspyMobileLabel ?? heading?.textContent?.trim() ?? defaultCurrentSection;
+    }
+  }
+
+  function updateScrollspy() {
+    scrollFrame = undefined;
+    if (headings.length === 0) return;
+
+    const isDesktop = window.matchMedia('(min-width: 64rem)').matches;
+    const mobileBarHeight = mobileScrollspyBar?.offsetHeight ?? 52;
+    const headingScrollMargin = Number.parseFloat(window.getComputedStyle(headings[0]).scrollMarginTop) || 0;
+    const stickyOffset = Math.max(isDesktop ? 32 : mobileBarHeight, headingScrollMargin);
+    const activationBoundary = stickyOffset + 2;
+    const hasReachedFirstHeading =
+      !isDesktop && Boolean(firstResearchHeading && firstResearchHeading.getBoundingClientRect().top < mobileBarHeight);
+
+    if (mobileScrollspyBar) {
+      mobileScrollspyBar.dataset.visible = String(hasReachedFirstHeading);
+      mobileScrollspyBar.setAttribute('aria-hidden', String(!hasReachedFirstHeading));
+    }
+
+    if (!isDesktop && !hasReachedFirstHeading) {
+      if (mobileScrollspy) mobileScrollspy.open = false;
+      setActiveHeading();
+      return;
+    }
+
+    let activeHeading: HTMLElement | undefined = isDesktop ? headings[0] : undefined;
+
+    for (const heading of headings) {
+      if (heading.getBoundingClientRect().top <= activationBoundary) {
+        activeHeading = heading;
+      } else {
+        break;
+      }
+    }
+
+    setActiveHeading(activeHeading);
+  }
+
+  function requestScrollspyUpdate() {
+    if (scrollFrame !== undefined) return;
+    scrollFrame = window.requestAnimationFrame(updateScrollspy);
+  }
+
+  scrollspyLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      const targetHeading = headings.find((heading) => heading.id === link.dataset.scrollspyTarget);
+      if (targetHeading) setActiveHeading(targetHeading);
+      if (mobileScrollspy) mobileScrollspy.open = false;
+    });
+  });
+
+  window.addEventListener('scroll', requestScrollspyUpdate, { passive: true });
+  window.addEventListener('resize', requestScrollspyUpdate);
+  updateScrollspy();
+</script>

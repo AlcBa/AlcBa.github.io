@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  grantor: string;
+  amount: string;
+  year: number;
+  investigators: string;
+  url?: string;
+}
+
+const { title, grantor, amount, year, investigators, url } = Astro.props;
+const grantDetails = [grantor, year].join(', ');
+---
+
+<div class="card">
+  <p class="text-sm italic text-gray-300">{grantDetails}</p>
+  {
+    url ? (
+      <a class="block font-semibold hover:underline" href={url} rel="noreferrer noopener" target="_blank">
+        {title}
+      </a>
+    ) : (
+      <p class="font-semibold">{title}</p>
+    )
+  }
+  <div class="mt-1 flex items-center gap-1.5">
+    <span
+      class="whitespace-nowrap rounded-full bg-blue-500/50 px-3 py-1 text-center text-sm"
+      aria-label={`Award amount: ${amount}`}
+    >
+      {amount}
+    </span>
+    <p>{investigators}</p>
+  </div>
+</div>

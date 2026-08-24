@@ -40,17 +40,66 @@ Content on home page
 
 ### Research Page
 
-The list of publications and working papers can be updated using the JSON files found in `src/content/research/publications.json` and `src/content/research/workingpapers.json` respectively.
+The lists of grants, publications, and working papers can be updated using `src/content/research/grants.json`, `src/content/research/publications.json`, and `src/content/research/workingpapers.json`, respectively.
 
-The format is as follows:
+Each grant in `grants.json` uses the following format:
 
-| Key                    | Value                                                                                                                                                                                                                                      |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| title                  | The title of the paper                                                                                                                                                                                                                     |
-| publication (optional) | The journal or book where the paper is published                                                                                                                                                                                           |
-| authors                | The authors of the paper                                                                                                                                                                                                                   |
-| pdfUrl (optional)      | The link to the PDF file, with the `.pdf` file extension e.g. `paper 1.pdf` <br/> <ul><li>PDF Document should be placed in the `public/research` folder</li><li>File extension must end in `.pdf`</li><li>File name is case-sensitive</li> |
-| doi (optional)         | The doi link to the paper, must begin with `https://` or `http://`.                                                                                                                                                                        |
+| Key            | Value                                                                                      |
+| -------------- | ------------------------------------------------------------------------------------------ |
+| title          | The title of the funded project                                                            |
+| grantor        | The organization or program providing the grant                                            |
+| amount         | The display-ready award amount, including its currency, such as `S$100,000` or `US$75,000` |
+| year           | The four-digit award year as a number, such as `2026`                                      |
+| investigators  | The investigators or recipients, formatted as they should appear on the page               |
+| url (optional) | A public URL for the grant or project. It must begin with `https://` or `http://`          |
+
+For example, a grant should be entered as:
+
+```json
+{
+  "title": "Title of the funded project",
+  "grantor": "Example Research Council",
+  "amount": "S$100,000",
+  "year": 2026,
+  "investigators": "Ba, Y. (Principal Investigator)",
+  "url": "https://example.com/grant"
+}
+```
+
+Grants appear in the order listed in `grants.json`. On the page, the grantor and award year are styled like a publication's journal and year. The amount appears in a chip beneath the project title, with the investigators displayed to the right of the chip.
+
+Each paper uses the following format:
+
+| Key                    | Value                                                                                                                                                                                                                        |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title                  | The title of the paper                                                                                                                                                                                                       |
+| publication (optional) | The journal or book where the paper was published. Enter only the publication name; do not include the year                                                                                                                  |
+| year (optional)        | The four-digit publication year as a number, such as `2025`. This is required for every entry in `publications.json` and can be omitted for working papers                                                                   |
+| authors                | The authors of the paper                                                                                                                                                                                                     |
+| pdfUrl (optional)      | The PDF filename, including the `.pdf` extension, such as `paper 1.pdf` <br/> <ul><li>Place the PDF in the `public/research` folder</li><li>The filename must end in `.pdf`</li><li>The filename is case-sensitive</li></ul> |
+| doi (optional)         | The DOI URL for the paper. It must begin with `https://` or `http://`                                                                                                                                                        |
+
+For example, a publication should be entered as:
+
+```json
+{
+  "title": "Title of the paper",
+  "publication": "Climate Policy",
+  "year": 2025,
+  "authors": "Ba, Y., & Sun, Z.",
+  "pdfUrl": "paper.pdf",
+  "doi": "https://doi.org/example"
+}
+```
+
+The research page uses `year` to automatically:
+
+- Sort publication groups from newest to oldest.
+- Generate the publication-year headings and scrollspy links.
+- Group publications from 2021 and earlier under **2021 and earlier**.
+
+> [!IMPORTANT]
+> Keep `publication` and `year` separate. For example, use `"publication": "Climate Policy"` and `"year": 2025`, not `"publication": "Climate Policy, 2025"`.
 
 ### Teaching page
 
@@ -76,11 +125,28 @@ The information for the acknowledgements on the teaching page can be updated usi
 
 The format is as follows:
 
-| Key                    | Value                                                             |
-| ---------------------- | ----------------------------------------------------------------- |
-| firstName              | The first name of the person.                                     |
-| lastName (optional)    | The last name of the person, and will be displayed in `ALL_CAPS`. |
-| description (optional) | A short description of the person.                                |
+| Key                    | Value                                                                                                                                                                                                                                                        |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| firstName              | The first name of the person.                                                                                                                                                                                                                                |
+| lastName (optional)    | The last name of the person, and will be displayed in `ALL_CAPS`.                                                                                                                                                                                            |
+| description (optional) | A short description of the person.                                                                                                                                                                                                                           |
+| logoUrl (optional)     | The file path to a guest speaker's logo, e.g. `./example-logo.png` <br/> <ul><li>Place the image in `src/content/acknowledgements`</li><li>The path must begin with `./`</li><li>A square image works best</li><li>The file path is case-sensitive</li></ul> |
+
+For example, a guest speaker with a logo should be entered in `guestspeakers.json` as:
+
+```json
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "description": "Example University",
+  "logoUrl": "./example-logo.png"
+}
+```
+
+The logo is displayed to the left of the guest speaker's name. Guest speakers without a `logoUrl` continue to use the text-only layout.
+
+> [!WARNING]
+> The site will not build if a `logoUrl` is provided but the referenced image does not exist.
 
 ### Data page
 
@@ -95,11 +161,14 @@ The format is as follows:
 
 The format of each data is as follows:
 
-| Key             | Value                                                                                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------------------- |
-| title           | The title of the data                                                                                                |
-| description     | The description of the data <ul><li>Support for certain markdown elements, such as links, bold and italics</li></ul> |
-| link (optional) | A link to the data, must begin with `http://` or `https://`                                                          |
+| Key                 | Value                                                                                                                                                                                                                                           |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title               | The title of the data                                                                                                                                                                                                                           |
+| description         | The description of the data <ul><li>Support for certain markdown elements, such as links, bold and italics</li></ul>                                                                                                                            |
+| link (optional)     | A link to the data, must begin with `http://` or `https://`                                                                                                                                                                                     |
+| imageUrl (optional) | The file path to the dataset cover image, e.g. `./dataset-cover.jpg` <br/> <ul><li>Place the image in `src/content/data`</li><li>The path must begin with `./`</li><li>A 4:3 image works best</li><li>The file path is case-sensitive</li></ul> |
+
+Datasets without an `imageUrl` automatically display a placeholder. The site will not build if an `imageUrl` is provided but the referenced file does not exist.
 
 ### Team page
 

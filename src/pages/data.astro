@@ -20,6 +20,6 @@ const { data, description } = entry;
       {description}
     </p>
     <h2 class="mt-8 mb-4">Data</h2>
-    {data.map((d) => <DataCard title={d.title} link={d.link} description={d.description} />)}
+    {data.map((d) => <DataCard title={d.title} link={d.link} description={d.description} imageUrl={d.imageUrl} />)}
   </div>
 </PageLayout>

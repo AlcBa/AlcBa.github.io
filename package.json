@@ -3,6 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -14,10 +17,11 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/mdx": "4.2.6",
+    "@astrojs/markdown-remark": "7.2.2",
+    "@astrojs/mdx": "7.0.5",
     "@fontsource-variable/karla": "^5.0.13",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "5.7.12",
+    "astro": "7.1.6",
     "autoprefixer": "^10.4.15",
     "marked": "^15.0.11",
     "postcss": "^8.4.28",

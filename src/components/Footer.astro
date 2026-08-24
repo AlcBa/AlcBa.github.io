@@ -5,10 +5,15 @@ const currentPath = Astro.url.pathname;
 ---
 
 <footer class="pt-2">
-  <div
-    class=`container px-6 mx-auto max-w-4xl flex ${currentPath === "/" ? "justify-center" : "justify-between" } items-center`
-  >
-    <p class="py-3 text-sm">&copy; 2023 - {new Date().getFullYear()}&nbsp;{SITE_NAME}</p>
-    {currentPath !== '/' && <SocialLinks />}
+  <div class:list={['border-t border-gray-400/30']}>
+    <div
+      class:list={[
+        'mx-auto flex items-center px-6 max-w-4xl',
+        currentPath === '/' ? 'justify-center' : 'justify-between',
+      ]}
+    >
+      <p class="py-3 text-sm">&copy; 2023 - {new Date().getFullYear()}&nbsp;{SITE_NAME}</p>
+      {currentPath !== '/' && <SocialLinks />}
+    </div>
   </div>
 </footer>

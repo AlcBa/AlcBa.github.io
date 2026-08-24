@@ -1,5 +1,6 @@
-import { defineCollection, type ImageFunction, z } from 'astro:content';
+import { defineCollection, type ImageFunction } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const homeCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/home' }),
@@ -9,7 +10,7 @@ const homeCollection = defineCollection({
       role: z.string(),
       faculty: z.string(),
       school: z.string(),
-      facultyUrl: z.string().url(),
+      facultyUrl: z.url(),
       imageUrl: image(),
     }),
 });
@@ -17,36 +18,42 @@ const homeCollection = defineCollection({
 const socialCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.json', base: './src/content/social' }),
   schema: z.object({
-    googleScholar: z
-      .string()
-      .url()
-      .refine((val) => val.includes('scholar.google.com')),
-    email: z.string().email(),
-    twitter: z
-      .string()
-      .url()
-      .refine((val) => val.includes('twitter.com')),
-    github: z
-      .string()
-      .url()
-      .refine((val) => val.includes('github.com')),
+    googleScholar: z.url().refine((val) => val.includes('scholar.google.com')),
+    email: z.email(),
+    twitter: z.url().refine((val) => val.includes('twitter.com')),
+    github: z.url().refine((val) => val.includes('github.com')),
   }),
 });
 
 const researchSchema = z.object({
   title: z.string(),
   publication: z.string().optional(),
+  year: z.number().int().min(1900).max(2100).optional(),
   authors: z.string(),
   pdfUrl: z
     .string()
     .refine((val) => val.endsWith('.pdf'))
     .optional(),
-  doi: z.string().url().optional(),
+  doi: z.url().optional(),
 });
 
 const researchCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/research' }),
+  loader: glob({ pattern: '{publications,workingpapers}.json', base: './src/content/research' }),
   schema: z.array(researchSchema),
+});
+
+const grantSchema = z.object({
+  title: z.string(),
+  grantor: z.string(),
+  amount: z.string(),
+  year: z.number().int().min(1900).max(2100),
+  investigators: z.string(),
+  url: z.url().optional(),
+});
+
+const grantsCollection = defineCollection({
+  loader: glob({ pattern: 'grants.json', base: './src/content/research' }),
+  schema: z.array(grantSchema),
 });
 
 const teachingSchema = z.object({
@@ -64,29 +71,34 @@ const teachingCollection = defineCollection({
   }),
 });
 
-const acknowledgementsSchema = z.object({
-  firstName: z.string(),
-  lastName: z.string().optional(),
-  description: z.string().optional(),
-});
+const acknowledgementsSchema = (image: ImageFunction) =>
+  z.object({
+    firstName: z.string(),
+    lastName: z.string().optional(),
+    description: z.string().optional(),
+    logoUrl: image().optional(),
+  });
 
 const acknowledgementsCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.json', base: './src/content/acknowledgements' }),
-  schema: z.array(acknowledgementsSchema),
+  schema: ({ image }) => z.array(acknowledgementsSchema(image)),
 });
 
-const dataSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  link: z.string().url().optional(),
-});
+const dataSchema = (image: ImageFunction) =>
+  z.object({
+    title: z.string(),
+    description: z.string(),
+    link: z.url().optional(),
+    imageUrl: image().optional(),
+  });
 
 const dataCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.json', base: './src/content/data' }),
-  schema: z.object({
-    description: z.string(),
-    data: z.array(dataSchema),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      description: z.string(),
+      data: z.array(dataSchema(image)),
+    }),
 });
 
 const teamSchema = (image: ImageFunction) =>
@@ -95,7 +107,7 @@ const teamSchema = (image: ImageFunction) =>
     lastName: z.string().optional(),
     role: z.string(),
     description: z.string(),
-    website: z.string().url().optional(),
+    website: z.url().optional(),
     imageUrl: image(),
   });
 
@@ -115,6 +127,7 @@ export const collections = {
   home: homeCollection,
   social: socialCollection,
   research: researchCollection,
+  grants: grantsCollection,
   teaching: teachingCollection,
   acknowledgements: acknowledgementsCollection,
   data: dataCollection,

@@ -2,71 +2,85 @@
   {
     "firstName": "Alvin",
     "lastName": "Yeo",
-    "description": "Singapore Food Agency"
+    "description": "Singapore Food Agency",
+    "logoUrl": "./sfa.jpg"
   },
   {
     "firstName": "Angel",
     "lastName": "Hsu",
-    "description": "University of North Carolina at Chapel Hill"
+    "description": "University of North Carolina at Chapel Hill",
+    "logoUrl": "./unc.png"
   },
   {
     "firstName": "Haohan",
     "lastName": "Chen",
-    "description": "The University of Hong Kong"
+    "description": "The University of Hong Kong",
+    "logoUrl": "./hku.png"
   },
   {
     "firstName": "Ivan",
     "lastName": "Yeo",
-    "description": "Ministry of Information, Communications and the Arts"
+    "description": "Ministry of Information, Communications and the Arts",
+    "logoUrl": "./mci.jpg"
   },
   {
     "firstName": "James Ji",
     "lastName": "Zhang",
-    "description": "Arboretica"
+    "description": "Arboretica",
+    "logoUrl": "./arboretica.png"
   },
   {
     "firstName": "Ji",
     "lastName": "Ma",
-    "description": "University of Texas at Austin"
+    "description": "University of Texas at Austin",
+    "logoUrl": "./utexas.webp"
   },
   {
     "firstName": "Joseph",
     "lastName": "Teo",
-    "description": "Ministry of Sustainability and the Environment"
+    "description": "Ministry of Sustainability and the Environment",
+    "logoUrl": "./mse.jpg"
   },
   {
     "firstName": "Kenneth",
     "lastName": "Benoit",
-    "description": "Singapore Management University"
+    "description": "Singapore Management University",
+    "logoUrl": "./smu.jpg"
   },
   {
     "firstName": "Kok Hoe",
     "lastName": "Ng",
-    "description": "LKYSPP, NUS"
+    "description": "LKYSPP, NUS",
+    "logoUrl": "./lkyspp.png"
   },
   {
     "firstName": "Martin",
     "lastName": "Chuang",
-    "description": "SOC, NUS"
+    "description": "SOC, NUS",
+    "logoUrl": "./soc.png"
   },
   {
     "firstName": "Wei",
     "lastName": "Luo",
-    "description": "Geography, NUS"
+    "description": "Geography, NUS",
+    "logoUrl": "./fass.png"
   },
   {
     "firstName": "Weijie",
     "lastName": "Zhang",
-    "description": "Ministry of Sustainability and the Environment"
+    "description": "Ministry of Sustainability and the Environment",
+    "logoUrl": "./mse.jpg"
   },
   {
     "firstName": "Weixiang",
     "lastName": "Wang",
-    "description": "Ministry of Sustainability and the Environment"
+    "description": "Ministry of Sustainability and the Environment",
+    "logoUrl": "./mse.jpg"
   },
   {
     "firstName": "Ziteng",
     "lastName": "Fan",
-    "description": "Fudan University"
+    "description": "Fudan University",
+    "logoUrl": "./fudan.png"
   }
 ]

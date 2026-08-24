@@ -15,7 +15,7 @@ if (!entry) {
 const { data } = entry;
 
 import Header from '../components/Header.astro';
-const { title } = Astro.props;
+const { title, className } = Astro.props;
 const currentPath = Astro.url.pathname;
 const SITE_DESCRIPTION = `${data.role} at ${data.faculty}, ${data.school}`;
 ---
@@ -42,7 +42,11 @@ const SITE_DESCRIPTION = `${data.role} at ${data.faculty}, ${data.school}`;
   <body class="bg-gray-500 text-gray-100">
     <Header />
     <main
-      class=`container min-h-[calc(100vh-319px)] ${currentPath === "/" ? 'max-w-5xl' : 'max-w-4xl'} mx-auto px-6 mb-8`
+      class:list={[
+        'container min-h-[calc(100vh-319px)] mx-auto px-6 mb-8',
+        currentPath === '/' ? 'max-w-5xl' : 'max-w-4xl',
+        className,
+      ]}
     >
       <slot />
     </main>

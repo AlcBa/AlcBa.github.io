@@ -10,7 +10,7 @@ const currentPath = Astro.url.pathname;
       navbar.scrollLeft = Number(sessionStorage['navbar-scroll']) || 0;
     }
 
-    document.addEventListener('visibilitychange', () => {
+    window.addEventListener('pagehide', () => {
       sessionStorage['navbar-scroll'] = navbar.scrollLeft;
     });
   }

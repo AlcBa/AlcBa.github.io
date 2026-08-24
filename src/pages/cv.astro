@@ -8,18 +8,33 @@ if (!entry) {
 }
 
 const { data } = entry;
+const previewUrl = `https://drive.google.com/file/d/${data.pdfUrl}/preview`;
+const downloadUrl = `https://drive.google.com/uc?export=download&id=${data.pdfUrl}`;
 ---
 
 <PageLayout title="CV">
-  <div class="mb-8">
-    <div>
-      <iframe class="h-[700px] w-full" src=`https://drive.google.com/file/d/${data.pdfUrl}/preview` allow="autoplay"
-      ></iframe>
-    </div>
-    <div class="w-full mt-4 text-center">
-      <a class="btn text-sm" href=`https://drive.google.com/uc?export=download&id=${data.pdfUrl}` download
-        >Download CV</a
+  <section class="px-0 md:px-6" aria-label="Curriculum vitae">
+    <div class="relative overflow-hidden rounded-lg border border-gray-400 bg-white shadow-sm">
+      <div
+        class="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-gray-300"
+        aria-hidden="true"
       >
+        Loading CV preview…
+      </div>
+      <iframe
+        class="relative z-10 block h-[70svh] min-h-120 max-h-208 w-full bg-transparent"
+        src={previewUrl}
+        title="Curriculum vitae PDF preview"
+        loading="lazy"></iframe>
     </div>
-  </div>
+
+    <div class="mt-4 flex justify-center">
+      <a class="btn inline-flex min-h-8 items-center gap-1.5 px-2.5 py-1.5 text-sm" href={downloadUrl}>
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="size-4 fill-none stroke-current" stroke-width="2">
+          <path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        Download CV
+      </a>
+    </div>
+  </section>
 </PageLayout>
