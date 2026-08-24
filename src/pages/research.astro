@@ -74,7 +74,7 @@ const scrollspyItems = [
     class="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(12rem,1fr)_minmax(0,56rem)_minmax(12rem,1fr)] lg:items-start"
   >
     <aside
-      class="hidden lg:sticky lg:top-8 lg:col-start-1 lg:row-start-1 lg:ml-6 lg:block lg:w-[calc(100%-2.5rem)] lg:max-w-44 lg:text-base"
+      class="hidden lg:sticky lg:top-8 lg:col-start-1 lg:row-start-1 lg:ml-6 lg:block lg:h-[calc(100vh-4rem)] lg:w-[calc(100%-2.5rem)] lg:max-w-44 lg:overflow-y-auto lg:overscroll-contain lg:pr-2 lg:text-base"
       aria-label="Research sections"
     >
       <nav>
@@ -129,7 +129,7 @@ const scrollspyItems = [
           </svg>
         </summary>
         <ul
-          class="absolute inset-x-4 top-full list-none rounded-b-md border border-gray-400 bg-gray-500 py-2 shadow-[0_0.5rem_1rem_rgb(0_0_0/10%)]"
+          class="absolute inset-x-4 top-full max-h-[calc(100dvh-4.25rem)] list-none overflow-y-auto overscroll-contain rounded-b-md border border-gray-400 bg-gray-500 py-2 shadow-[0_0.5rem_1rem_rgb(0_0_0/10%)]"
         >
           {
             scrollspyItems.map((item) => (
