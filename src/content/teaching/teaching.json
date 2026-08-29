@@ -2,6 +2,18 @@
   "acknowledgementDescription": "A heartfelt thank you to the guest speakers and teaching assistants for sharing their time, insights, and expertise, which greatly enriched the learning experience.",
   "courses": [
     {
+      "title": "PP6703: Foundations of Public Policy and Administration",
+      "school": "National University of Singapore",
+      "type": "Graduate course (PhD core)",
+      "year": [2026]
+    },
+    {
+      "title": "PP5708: Data Science in Public Policy (in Mandarin)",
+      "school": "National University of Singapore",
+      "type": "Graduate course",
+      "year": [2026, 2027]
+    },
+    {
       "title": "PP5409: Foundations for Public Policy",
       "school": "National University of Singapore",
       "type": "Graduate course",
@@ -17,7 +29,7 @@
       "title": "PP5297: Public Policy for Sustainability",
       "school": "National University of Singapore",
       "type": "Graduate course",
-      "year": [2022]
+      "year": [2022, 2026]
     },
     {
       "title": "PP5179: Environmental Social Sciences",
