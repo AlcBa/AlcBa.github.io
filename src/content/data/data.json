@@ -9,7 +9,7 @@
     },
     {
       "title": "City-Level Carbon Emissions in Southeast Asia (2000–2020)",
-      "description": "An annual CO₂ emissions dataset covering 4,413 city-level (GADM admin-3) units across all 11 Southeast Asian countries from 2000 to 2020, developed by downscaling EDGAR emissions inventories with nighttime lights, impervious surface, and urban–rural settlement data. The dataset supports urban mitigation planning and tracking progress toward climate targets in a region where consistent city-resolved inventories remain scarce. Built with X. Chen and published in [Scientific Data](https://doi.org/10.1038/s41597-026-07320-1).",
+      "description": "An annual CO₂ emissions dataset covering 4,413 city-level (GADM admin-3) units across all 11 Southeast Asian countries from 2000 to 2020, developed by downscaling EDGAR emissions inventories with nighttime lights, impervious surface, and urban–rural settlement data. The dataset supports urban mitigation planning and tracking progress toward climate targets in a region where consistent city-resolved inventories remain scarce. Built with Xingyu Chen and published in [Scientific Data](https://doi.org/10.1038/s41597-026-07320-1).",
       "link": "https://doi.org/10.1038/s41597-026-07320-1",
       "imageUrl": "./sea-emissions.jpg"
     },
