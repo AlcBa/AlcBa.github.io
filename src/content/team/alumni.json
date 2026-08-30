@@ -24,6 +24,14 @@
     "imageUrl": "./ba-yu-xi.jpg"
   },
   {
+    "firstName": "Yuheng",
+    "lastName": "Lin",
+    "role": "Alumni",
+    "description": "NUS Business School",
+    "website": "https://www.linkedin.com/in/11yuhenglin/",
+    "imageUrl": "./YuhengLin.jpg"
+  },
+  {
     "firstName": "Yinfeng",
     "lastName": "Liang",
     "role": "Alumni",
