@@ -16,6 +16,22 @@
     "imageUrl": "./Qiuyuan.jpg"
   },
   {
+    "firstName": "Yiyun",
+    "lastName": "Xia",
+    "role": "PhD Student",
+    "description": "LKYSPP",
+    "website": "https://scholar.google.com/citations?user=6k79sJIAAAAJ&hl=en/",
+    "imageUrl": "./BambooPhoto_Yiyun.jpg"
+  },
+  {
+    "firstName": "Tiaoho",
+    "lastName": "Zhao",
+    "role": "PhD Student",
+    "description": "LKYSPP",
+    "website": "www.linkedin.com/in/tianhao-zhao-62b572431/",
+    "imageUrl": "./Tianhao.jpg"
+  },
+  {
     "firstName": "Fangnan",
     "lastName": "Zheng",
     "role": "Research Assistant",
