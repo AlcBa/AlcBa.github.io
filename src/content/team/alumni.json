@@ -48,6 +48,14 @@
     "imageUrl": "./bai-xue-qi1.jpg"
   },
   {
+    "firstName": "Xingyu",
+    "lastName": "Chen",
+    "role": "Alumni",
+    "description": "Southwestern University of Finance and Economics",
+    "website": "https://itsxyc.github.io/",
+    "imageUrl": "./Xingyu.jpg"
+  }, 
+  {
     "firstName": "Shanyue",
     "lastName": "Wang",
     "role": "Alumni",
